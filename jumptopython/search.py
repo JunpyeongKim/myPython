@@ -1,4 +1,4 @@
-__author__ = '1000938'
+__author__ = 'Junpyeong Kim'
 
 import os
 
@@ -19,12 +19,12 @@ def doFileWork(filename):
     ext = os.path.splitext(filename)[-1]
     if ext == '.py': print(filename)
 
-search('/Users/1000938/prj/python')
+search('/Users/{id}/prj/python')
 # """
 
 # Implementation.2
 # """
-for (path, dir, files) in os.walk("/Users/1000938/prj/python"):
+for (path, dir, files) in os.walk("/Users/{id}/prj/python"):
     for filename in files:
         ext = os.path.splitext(filename)[-1]
         if ext == ".py":

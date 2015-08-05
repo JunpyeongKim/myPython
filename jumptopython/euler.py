@@ -1,4 +1,4 @@
-__author__ = '1000938'
+__author__ = 'Junpyeong Kim'
 
 # euler.py
 # Multiples of 3 and 5

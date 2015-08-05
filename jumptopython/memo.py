@@ -1,4 +1,4 @@
-__author__ = 'Junpyeong KIm'
+__author__ = 'Junpyeong Kim'
 
 # memo.py
 import sys

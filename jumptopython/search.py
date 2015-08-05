@@ -2,7 +2,8 @@ __author__ = '1000938'
 
 import os
 
-
+# Implementation.1
+"""
 def search(dirname):
     flist = os.listdir(dirname)
     for f in flist:
@@ -19,4 +20,13 @@ def doFileWork(filename):
     if ext == '.py': print(filename)
 
 search('/Users/1000938/prj/python')
+# """
 
+# Implementation.2
+# """
+for (path, dir, files) in os.walk("/Users/1000938/prj/python"):
+    for filename in files:
+        ext = os.path.splitext(filename)[-1]
+        if ext == ".py":
+            print("%s/%s" % (path, filename))
+# """

@@ -3,8 +3,12 @@ __author__ = '1000938'
 import sys
 
 
+# page.py
+
+
 def usage():
-    print("Usage: python %s total numinpage" % sys.argv[0])
+    print("Usage: python %s total items-a-page" % sys.argv[0])
+
 
 def getPage(m, n):
     page, remainder = divmod(m, n)
@@ -12,9 +16,17 @@ def getPage(m, n):
         page += 1
     return page
 
+
+try:
+    total = int(sys.argv[1])
+    items_a_page = int(sys.argv[2])
+except IndexError:
+    usage()
+    sys.exit(2)
+
+
 print("""
 Total : %s
-Numer in a Page : %s
-Pages : %d
-""" % (sys.argv[1], sys.argv[2], getPage(int(sys.argv[1]), int(sys.argv[2])))
-      )
+Items a Page : %s
+Pages(required) : %d
+""" % (total, items_a_page, getPage(total, items_a_page)) )

@@ -14,8 +14,9 @@ def search(dirname):
 
 
 def doFileWork(filename):
+    # sp = os.path.splitext(filename)
     ext = os.path.splitext(filename)[-1]
     if ext == '.py': print(filename)
 
-search('/Users/1000938/workspace/python')
+search('/Users/1000938/prj/python')
 

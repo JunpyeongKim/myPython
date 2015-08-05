@@ -8,7 +8,7 @@ __author__ = 'Junpyeong Kim'
 def gugu(n):
     result = []
 
-    i = 1;
+    i = 1
     while i < 10:
         result.append(n*i)
         i = i + 1

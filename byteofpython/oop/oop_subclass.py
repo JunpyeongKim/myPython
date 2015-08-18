@@ -2,7 +2,7 @@ __author__ = 'Junpyeong Kim'
 
 
 # oop_subclass.py
-# 14.6.Inheritance
+# 14.6. Inheritance
 # - http://www.swaroopch.com/notes/python/#_inheritance
 
 

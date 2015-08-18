@@ -2,7 +2,7 @@ __author__ = 'Junpyeong Kim'
 
 
 # oop_objvar.py
-# 14.5.Class And Object Variables
+# 14.5. Class And Object Variables
 # - http://www.swaroopch.com/notes/python/#class_obj_vars
 
 

@@ -7,8 +7,10 @@ __author__ = 'Junpyeong Kim'
 
 
 class Person:
+    # constructor implicitly called when creating a new instance of the class.
     def __init__(self, name):
         self.name = name
+        print '__init__ is implicitly called with', self.name
 
     def say_hi(self):
         print 'Hello, my name is', self.name

@@ -1,4 +1,4 @@
-__author__ = 'Junpyeong'
+__author__ = 'Junpyeong Kim'
 
 
 # oop_methods.py

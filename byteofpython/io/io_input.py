@@ -7,9 +7,11 @@ __author__ = 'Junpyeong Kim'
 
 
 def reverse(text):
+    # slices from sequences (http://www.swaroopch.com/notes/python/#sequence)
     return text[::-1]
 
 
+# palindrom in wiki (http://en.wiktionary.org/wiki/palindrome)
 def is_palindrome(text):
     return text == reverse(text)
 

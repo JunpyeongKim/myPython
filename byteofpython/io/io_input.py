@@ -25,8 +25,11 @@ def is_palindrome(text):
     Enter text: racecar
     Yes, it is a palindrome
 
-    Enter text: Rise to vote, sir.
+    Enter text: Rise to vote, sir. (TBD)
     Yes, it is a palindrome
+    - Use a tuple (you can find a list of all punctuation marks here) to hold all the forbidden characters,
+    - then use the membership test to determine whether a character should be removed or not,
+    - i.e. forbidden = (!, ?, ., …​).
 '''
 
 something = raw_input("Enter text: ")

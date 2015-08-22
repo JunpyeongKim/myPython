@@ -8,6 +8,12 @@ __author__ = 'Junpyeong Kim'
 import sys
 import time
 
+poem = '''\
+Programming is fun
+When the work is done
+if you wanna make your work also fun:
+    use Python!
+'''
 
 f = None
 try:

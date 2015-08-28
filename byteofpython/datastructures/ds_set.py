@@ -1,6 +1,8 @@
 # ds_set.py
 #  12.6. Set
 # - http://www.swaroopch.com/notes/python/#set
+#   - unordered collections of simple objects.
+#   - the existence is more important than the order or how many times it occurs.
 
 bri = set(['brazil', 'russia', 'india'])
 print 'bric is', bri
@@ -30,8 +32,8 @@ bri.remove('russia')
 print '(Remove) bri is', bri
 
 if bri & bric:  # OR bri.intersection(bric)
-    print 'intersected set is', bri & bric
+    print 'Intersection is', bri & bric
 # if bri.intersection(bric):
-#     print 'intersected set is', bri.intersection(bric)
+#     print 'Intersection is', bri.intersection(bric)
 else:
     print 'not intersected'

@@ -1,6 +1,7 @@
 # ds_str_methods.py
 # 12.8. More About Strings
 # - http://www.swaroopch.com/notes/python/#more_strings
+#   - help(str)
 
 # This is a string object
 name = 'Swaroop'

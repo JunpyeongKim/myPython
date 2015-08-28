@@ -27,6 +27,7 @@ print 'I will sort my list now'
 shoplist.sort()
 print 'Sorted shopping list is', shoplist
 
+# using the indexing operator
 print 'The first item I will buy is', shoplist[0]
 olditem = shoplist[0]
 del shoplist[0]

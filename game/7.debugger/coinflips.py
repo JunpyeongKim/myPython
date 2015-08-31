@@ -1,7 +1,8 @@
 # coinflips.py
 # 7.9 Example Using Break Points
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
-# - http://inventwithpython.com/coinflips.py
+#   - http://inventwithpython.com/chapter7.html
+#   - http://inventwithpython.com/coinFlips.py
 
 import random
 

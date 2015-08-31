@@ -26,7 +26,7 @@ def chooseCave():
     cave = ''
     while cave != '1' and cave != '2':
         print('Which cave will you go into? (1 or 2)')
-        cave = raw_input()  # v3.x --> input() for v3.x
+        cave = raw_input()  # v2.x --> input() for v3.x
 
     return cave
 

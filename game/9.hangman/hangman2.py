@@ -1,6 +1,6 @@
 # encoding=utf-8
 
-# hangman.py
+# hangman2.py
 
 # 9. Hangman
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
@@ -82,20 +82,53 @@ HANGMANPICS = ['''
  /|\  |
  / \  |
       |
+=========''', '''
+
+  +---+
+  |   |
+ [O   |
+ /|\  |
+ / \  |
+      |
+=========''', '''
+
+  +---+
+  |   |
+ [O]  |
+ /|\  |
+ / \  |
+      |
 =========''']
 
 
-words = 'ant baboon badger bat bear beaver camel cat clam cobra cougar coyote crow ' \
-        'deer dog donkey duck eagle ferret fox frog goat goose hawk lion lizard llama ' \
-        'mole monkey moose mouse mule newt otter owl panda parrot pigeon python ' \
-        'rabbit ram rat raven rhino salmon seal shark sheep skunk sloth snake spider stork swan ' \
-        'tiger toad trout turkey turtle weasel whale wolf wombat zebra'.split()
+# favorite1 = {'fruit': 'apples', 'number': 42, 'animal': 'cats'}
+# favorite2 = {'animal': 'cats', 'number': 42, 'fruit': 'apples'}
+# favorite1 == favorite2 --> True
+
+# listFavs1 = ['apples', 'cats', 42]
+# listFavs2 = ['cats', 42, 'apples']
+# listFavs1 == listFavs2 --> False
+
+# spam = {'0': 'a string', 0: 'an interger'}
+# spam[0] vs. spam['0']
+# spam.keys() --> dict_keys type --> list(spam.keys())
+# spam.values() --> dict_values type --> list(spam.values())
+words = {'Colors': 'red orange yellow green blue indigo, violet white black brown'.split(),
+         'Shapes': 'square triangle rectangle circle ellipse rhombus trapazoid chevron '
+                   'pentagon hexagon septagon octagon'.split(),
+         'Fruits': 'apple orange lemon lime pear watermelon grape grapefruit cherry banana '
+                   'cantaloupe mango strawberry tomato'.split(),
+         'Animals': 'bat bear beaver cat cougar crab deer dog donkey duck eagle fish frog goat '
+                    'leech lion lizard monkey moose mouse otter owl panda python rabbit rat shark '
+                    'sheep skunk tiger turkey turtle weasel whale wolf wombat zebra'.split()}
 
 
-def getRandomWord(wordList):
+def getRandomWord(wordDict):
     # This function returns a random string from the passed list of strings.
-    wordIndex = random.randint(0, len(wordList) - 1)
-    return wordList[wordIndex]
+    # random.randint(0, 9) == random.choice(list(range(0, 10)))
+    wordKey = random.choice(list(wordDict.keys()))
+    wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
+    return [wordDict[wordKey][wordIndex], wordKey]
 
 
 def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
@@ -156,12 +189,14 @@ def playAgain():
 print('H A N G M A N')
 missedLetters = ''
 correctLetters = ''
-secretWord = getRandomWord(words)
+# a, b, c = ['apples', 'cats', 42] to unpack
+secretWord, secretKey = getRandomWord(words)
 gameIsDone = False
 
-print 'secretWord is', secretWord
+print '( 3secretWord is', secretWord, 'in', secretKey,')'
 
 while True:
+    print('The secret word is in the set ' + secretKey)
     displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
 
     # Let the player type in a letter.
@@ -196,7 +231,7 @@ while True:
             missedLetters = ''
             correctLetters = ''
             gameIsDone = False
-            secretWord = getRandomWord(words)
+            secretWord, secretKey = getRandomWord(words)
             print '(Again) secretWord is', secretWord
         else:
             break

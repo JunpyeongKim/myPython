@@ -1,16 +1,29 @@
+# encoding=utf-8
+
 # dragon.py
+
 # 6. Dragon Realm
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/inventwithpython_3rd.pdf
 #       - http://inventwithpython.com/chapter6.html
 #       - http://inventwithpython.com/dragon.py
 
+# Topics Covered In This Chapter:
+# ·        The time.sleep() function
+# ·        Creating your own functions with the def keyword
+# ·        The return keyword
+# ·        The and, or, and not Boolean operators
+# ·        Truth tables
+# ·        Global and local variable scope
+# ·        Parameters and Arguments
+# ·        Flow charts
+
+
 import random
 import time
 
 
-# if call displayIntro() before its definition, NameError is raised.
-# displayIntro()
+# displayIntro()  # if call displayIntro() before its definition, NameError is raised.
 
 
 def displayIntro():
@@ -18,6 +31,8 @@ def displayIntro():
     print('you see two caves. In one cave, the dragon is friendly')
     print('and will share his treasure with you. The other dragon')
     print('is greedy and hungry, and will eat you on sight.')
+    # print()  # v3.x
+    print ''  # v2.x
 
 
 def chooseCave():
@@ -26,7 +41,8 @@ def chooseCave():
     cave = ''
     while cave != '1' and cave != '2':
         print('Which cave will you go into? (1 or 2)')
-        cave = raw_input()  # v2.x --> input() for v3.x
+        # cave = input()  # v3.x
+        cave = raw_input()  # v2.x
 
     return cave
 
@@ -37,7 +53,8 @@ def checkCave(chosenCave):
     print('It is dark and spooky...')
     time.sleep(2)
     print('A large dragon jumps out in front of you! He opens his jaws and...')
-    print('')
+    # print()  # v3.x
+    print ''  # v2.x
     time.sleep(2)
 
     friendlyCave = random.randint(1, 2)
@@ -59,4 +76,5 @@ while playAgain == 'yes' or playAgain == 'y':
     checkCave(caveNumber)
 
     print('Do you want to play again? (yes or no)')
-    playAgain = raw_input()  # v2.x --> input() for v3.x
+    # playAgain = input()  # v3.x
+    playAgain = raw_input()  # v2.x

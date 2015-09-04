@@ -1,8 +1,23 @@
+# encoding=utf-8
+
 # hangman.py
+
 # 9. Hangman
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter9.html
 #   - http://inventwithpython.com/hangman.py
+
+# Topics Covered In This Chapter:
+# ·        Multi-line Strings
+# ·        Methods
+# ·        Lists
+# ·        The append() and reverse() list methods
+# ·        The lower(), upper(), split(), startswith(), and endswith() string methods
+# ·        The in and not in operators
+# ·        The range() and list() functions
+# ·        del statements
+# ·        for loops
+# ·        elif statements
 
 
 import random
@@ -157,7 +172,8 @@ while True:
                 break
 
         if foundAllLetters:
-            print('Yes! The secret words is "', secretWord + '"! You have won!')
+            # print('Yes! The secret word is "' + secretWord + '"! You have won!')  # v3.x
+            print('Yes! The secret word is "', secretWord + '"! You have won!')  # v2.x
             gameIsDone = True
     else:
         missedLetters = missedLetters + guess

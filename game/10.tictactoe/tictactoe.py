@@ -1,8 +1,17 @@
+# encoding=utf-8
+
 # tictactoe.py
+
 # 10. Tic Tac Toe
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter10.html
 #   - http://inventwithpython.com/tictactoe.py
+
+# Topics Covered In This Chapter:
+# ·        Artificial Intelligence
+# ·        List References
+# ·        Short-Circuit Evaluation
+# ·        The None Value
 
 # Tic Tac Toe
 

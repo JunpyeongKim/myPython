@@ -1,9 +1,23 @@
+# encoding=utf-8
+
 # cipher.py
+
 # 14. Caesar Cipher
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter14.html
 #   - http://inventwithpython.com/cipher.py
 
+# Topics Covered In This Chapter:
+# ·        Cryptography and ciphers
+# ·        Encrypting and decrypting
+# ·        Ciphertext, plaintext, keys, and symbols
+# ·        The Caesar Cipher
+# ·        ASCII ordinal values
+# ·        The chr() and ord() functions
+# ·        The isalpha() string method
+# ·        The isupper() and islower() string methods
+# ·        Cryptanalysis
+# ·        The brute force technique
 
 # Caesar Cipher
 
@@ -40,15 +54,20 @@ def getKey():
 
 def getTranslatedMessage(mode, message, key):
     if mode[0] == 'd' or mode[0] == 'b':
-        key = -key
+        key = -key  # shift
 
     translated = ''
 
     for symbol in message:
+        # 'Hello'.isalpha() --> True
+        # 'Forty two'.isalpha() --> False
+        # '42'.isalpha() --> False
+        # ' '.isalpha() --> False
         if symbol.isalpha():
             num = ord(symbol)
             num += key
 
+            # ASCII: A(65) ~ Z(90), a(97) ~ z(122), 0(48) ~ 9(57)
             if symbol.isupper():
                 if num > ord('Z'):
                     num -= 26

@@ -1,17 +1,29 @@
+# encoding=utf-8
+
 # bagels.py
+
 # 11. Bagels
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter11.html
 #   - http://inventwithpython.com/bagels.py
+
+# Topics Covered In This Chapter:
+# ·        Augmented Assignment Operators, +=, -=, *=, /=
+# ·        The random.shuffle() Function
+# ·        The sort() and join() List Methods
+# ·        String Interpolation (also called String Formatting)
+# ·        Conversion Specifier %s
+# ·        Nested Loops
+
 
 import random
 
 
 def getSecretNum(numDigits):
     # Returns a string that is numDigits long, made up of unique random digits.
-    numbers = list(range(10))
-    random.shuffle(numbers)
-    print '(Shfuffle) numbers is ', numbers
+    numbers = list(range(10))  # use list() because range() returns an iterator of a list-like collection.
+    random.shuffle(numbers)  # rather modifies the list you pass.
+    print '(Shuffled) numbers is ', numbers
     secretNum = ''
     for i in range(numDigits):
         secretNum += str(numbers[i])
@@ -35,7 +47,7 @@ def getClues(guess, secretNum):
         return 'Bagels'
 
     print '(Before sorting) clue is', clue
-    clue.sort()
+    clue.sort()  # in alphabetical or numerical order
     print '(After sorting) clue is', clue
 
     return ' '.join(clue)
@@ -52,15 +64,20 @@ def isOnlyDigits(num):
 
     return True
 
+
 def playAgain():
     # This function returns True if the player wants to play again, otherwise it returns False.
     print('Do you want to play again? (yes or no)')
     # return input().lower().startswith('y')  # v3.x
     return raw_input().lower().startswith('y')  # v2.x
 
+
 NUMDIGITS = 3
 MAXGUESS = 10
 
+
+# string interpolation or string formatting
+# - NUMDIGITS will be automatically converted to a string.
 print('I am thinking of a %s-digit number. Try to guess what it is.' %(NUMDIGITS))
 print('Here are some clues:')
 print('When I say:  That means:')
@@ -70,6 +87,8 @@ print(' Bagels      No digit is correct.')
 
 while True:
     secretNum = getSecretNum(NUMDIGITS)
+    # string interpolation or string formatting
+    # - MAXGUESS will be automatically converted to a string.
     print('I have thought up a number. You have %s guesses to get it.' % (MAXGUESS))
 
     numGuesses = 1
@@ -81,13 +100,15 @@ while True:
             guess = raw_input()  # 2.x
 
         clue = getClues(guess, secretNum)
-        print(clue)
+        # print(clue)  # v3.x
+        print '(Clue): ', clue  # v2.x
         numGuesses += 1
 
         if guess == secretNum:
             break
 
         if numGuesses > MAXGUESS:
+            # string interpolation or string formatting
             print('You ran out of guesses. The answer was %s.' % (secretNum))
 
     if not playAgain():

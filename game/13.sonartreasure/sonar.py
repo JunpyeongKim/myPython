@@ -1,9 +1,17 @@
+# encoding=utf-8
+
 # sonar.py
+
 # 13. Sonar Treasure Hunt
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter13.html
 #   - http://inventwithpython.com/sonar.py
 
+# Topics Covered In This Chapter:
+# ·        Data structures
+# ·        The remove() list method
+# ·        The isdigit() string method
+# ·        The sys.exit() function
 
 # Sonar
 

@@ -1,9 +1,26 @@
+# encoding=utf-8
+
 # guess.py
+
 # 4. Guess The Number
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/inventwithpython_3rd.pdf
 #   - http://inventwithpython.com/chapter4.html
 #       - http://inventwithpython.com/guess.py
+
+# Topics Covered In This Chapter:
+# ·        import statements
+# ·        Modules
+# ·        while statements
+# ·        Conditions
+# ·        Blocks
+# ·        Booleans
+# ·        Comparison operators
+# ·        The difference between = and ==
+# ·        if statements
+# ·        The break keyword
+# ·        The str()and int()and float() functions
+# ·        The random.randint() function
 
 
 # This is a guess the number game.
@@ -23,9 +40,9 @@ print('Well, ' + myName + ', I am thinking of a number between 1 and 20.')
 while guessesTaken < 6:
     print('Take a guess.')  # There are four spaces in front of print.
     guess = raw_input()
-    # try
-    # - int('hello'), int('forty-two') --> ValueError
-    # - int(' 42 ') --> 42
+
+    # int('hello'), int('forty-two') --> ValueError
+    # int(' 42 ') --> 42
     guess = int(guess)
 
     guessesTaken = guessesTaken + 1

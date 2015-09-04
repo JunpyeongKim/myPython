@@ -123,6 +123,8 @@ def chooseRandomMoveFromList(board, movesList):
         return None
 
 
+# algorithm
+# - computer's win --> player's win --> corner(1, 3, 7, 9) --> center(5) --> side(2, 4, 6, 8)
 def getComputerMove(board, computerLetter):
     # Given a board and the computer's letter, determine where to move and return that move.
     if computerLetter == 'X':

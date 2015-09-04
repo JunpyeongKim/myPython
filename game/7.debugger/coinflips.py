@@ -1,8 +1,22 @@
+# encoding=utf-8
+
 # coinflips.py
+
 # 7.9 Example Using Break Points
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter7.html
+#       - Syntax error
+#       - Runtime error (=Crash)
+#       - Semantic error
 #   - http://inventwithpython.com/coinFlips.py
+
+# Topics Covered In This Chapter:
+# ·        3 Different Types of Errors
+# ·        IDLE’s Debugger
+# ·        Stepping Into, Over, and Out
+# ·        Go and Quit
+# ·        Break Points
+
 
 import random
 

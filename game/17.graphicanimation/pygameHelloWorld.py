@@ -6,6 +6,7 @@
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter17.html
 #   - http://inventwithpython.com/pygameHelloWorld.py
+#   - http://inventwithpython.com/animation.py
 
 # Topics Covered In This Chapter:
 # ·        Installing Pygame

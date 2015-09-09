@@ -7,6 +7,7 @@
 #   - http://inventwithpython.com/inventwithpython_3rd.pdf
 #   - http://inventwithpython.com/chapter4.html
 #       - http://inventwithpython.com/guess.py
+#       - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        import statements

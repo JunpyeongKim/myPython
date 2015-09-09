@@ -5,6 +5,8 @@
 # 17. Graphics and Animation
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter17.html
+#       - drawing primitives
+#       - pygame uses tuple for fast graphics
 #   - http://inventwithpython.com/pygameHelloWorld.py
 #   - http://inventwithpython.com/animation.py
 #   - http://inventwithpython.com/downloads/
@@ -23,7 +25,8 @@
 
 
 import pygame, sys
-from pygame.locals import *
+from pygame.locals import *  # QUIT, K_ESCAPE, ...
+
 
 # set up pygame
 pygame.init()
@@ -45,17 +48,32 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+    # Aqua (0, 255, 255)
+    # Cornflower Blue (100, 149, 237)
+    # Fuchsia (255, 0, 255)
+    # Gray (128, 128, 128)
+    # Lime (0, 128, 0)
+    # Maroon (128, 0, 0)
+    # Navy Blue (0, 0, 128)
+    # Olive (128, 128, 0)
+    # Purple (128, 0, 128)
+    # Silver (192, 192, 192)
+    # Teal (0, 128, 128)
+    # Yellow (128, 128, 0)
 
 # set up fonts
 basicFont = pygame.font.SysFont(None, 48)
     # create a Font from the system fonts
     # - SysFont(name, size, bold=False, italic=False) -> Font
+    #   - None : the default system font
 
 # set up the text
 text = basicFont.render('Hello world!', True, WHITE, BLUE)
     # draw text on a new Surface
     # - render(text, antialias, color, background=None) -> Surface
 textRect = text.get_rect()
+    # pygame.Rect
+    # pygame.Rect(left, top, width, height)
 textRect.centerx = windowSurface.get_rect().centerx
 textRect.centery = windowSurface.get_rect().centery
 
@@ -72,6 +90,7 @@ pygame.draw.line(windowSurface, BLUE, (60, 60), (120, 60), 4)
     # draw a straight line segment
     # - line(Surface, color, start_pos, end_pos, width=1) -> Rect
 pygame.draw.line(windowSurface, BLUE, (120, 60), (60, 120))
+    # default : 1
 pygame.draw.line(windowSurface, BLUE, (60, 120), (120, 120), 4)
 
 # draw a blue circle onto the surface
@@ -93,6 +112,9 @@ pygame.draw.rect(windowSurface, RED, (textRect.left - 20, textRect.top - 20, tex
 pixArray = pygame.PixelArray(windowSurface)
     # pygame object for direct pixel access of surfaces
     # - PixelArray(Surface) -> PixelArray
+    # - lock that Surface object
+    #   - no blit() function calls can be made on that Surface object.
+    #   - "pygame.error: Surfaces must not be locked during blit"
 pixArray[480][380] = BLACK
 del pixArray
 
@@ -110,6 +132,8 @@ pygame.display.update()
 # run the game loop
 while True:
     for event in pygame.event.get():
+        # Event objects that have been generated since the last call to pygame.event.get().
+        # These events are returned as a list of Event objects.
         if event.type == QUIT:
             pygame.quit()
             sys.exit()

@@ -31,6 +31,9 @@ pygame.init()
 windowSurface = pygame.display.set_mode((500, 400), 0, 32)
     # Initialize a window or screen for display
     # - set_mode(resolution=(0,0), flags=0, depth=0) -> Surface
+    #   - flags : which type of display
+    #       - 0 or no flags : software driven window
+    #       - pygame.FULLSCREEN | .DOUBLEBUF | . HWSURFACE | .OPENGL | .RESIZABLE | .NOFRAME
 pygame.display.set_caption('Hello world!')
     # Set the current window caption
     # - set_caption(title, icontitle=None) -> None

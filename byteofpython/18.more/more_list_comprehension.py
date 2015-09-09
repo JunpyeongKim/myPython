@@ -3,6 +3,7 @@
 # more_list_comprehension.py
 
 # 18.5 List Comprehension
+# - http://www.swaroopch.com/notes/python/#list_comprehension
 #   - to derive a new list from an existing list.
 #   - the original list remains unmodified.
 #   - advantage : reduce the amount of boilerplate code

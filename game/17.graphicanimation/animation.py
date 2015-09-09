@@ -7,6 +7,7 @@
 #   - http://inventwithpython.com/chapter17.html
 #   - http://inventwithpython.com/pygameHelloWorld.py
 #   - http://inventwithpython.com/animation.py
+#   - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        Installing Pygame

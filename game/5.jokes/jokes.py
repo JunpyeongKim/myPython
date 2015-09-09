@@ -7,6 +7,7 @@
 #   - http://inventwithpython.com/inventwithpython_3rd.pdf
 #       - http://inventwithpython.com/chapter5.html
 #       - http://inventwithpython.com/jokes.py
+#       - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        Escape characters

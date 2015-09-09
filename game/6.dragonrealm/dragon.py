@@ -7,6 +7,7 @@
 #   - http://inventwithpython.com/inventwithpython_3rd.pdf
 #       - http://inventwithpython.com/chapter6.html
 #       - http://inventwithpython.com/dragon.py
+#       - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        The time.sleep() function

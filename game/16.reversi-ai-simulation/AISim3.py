@@ -11,6 +11,7 @@
 # ·        AISim1.py will be made by making changes to reversi.py
 # ·        AISim2.py will be made by making changes to AISim1.py
 # ·        AISim3.py will be made by making changes to AISim2.py
+#   - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        Simulations

@@ -6,6 +6,7 @@
 # - Invent Your Own Computer Games with Python 3e, IAl Sweigart
 #   - http://inventwithpython.com/chapter15.html
 #   - http://inventwithpython.com/reversi.py
+#   - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        The bool() Function

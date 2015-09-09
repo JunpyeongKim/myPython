@@ -7,6 +7,7 @@
 #   - http://inventwithpython.com/chapter18.html
 #   - http://inventwithpython.com/collisionDetection.py
 #   - http://inventwithpython.com/pygameInput.py
+#   - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        Collision Detection

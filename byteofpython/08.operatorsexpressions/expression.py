@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # expression.py
+
 # 8.6. Expressions
 # - http://www.swaroopch.com/notes/python/#_expressions
 

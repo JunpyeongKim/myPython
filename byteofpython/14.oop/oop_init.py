@@ -1,7 +1,7 @@
-__author__ = 'Junpyeong Kim'
-
+# encoding=utf-8
 
 # oop_init.py
+
 # 14.4. The init method
 # - http://www.swaroopch.com/notes/python/#init
 

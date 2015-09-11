@@ -1,7 +1,7 @@
-__author__ = 'Junpyeong Kim'
-
+# encoding=utf-8
 
 # oop_objvar.py
+
 # 14.5. Class And Object Variables
 # - http://www.swaroopch.com/notes/python/#class_obj_vars
 #   - The data part, i.e. fields, are bound to the namespaces of the classes and objects.
@@ -110,8 +110,8 @@ droid2.die()
 Robot.how_many()
 
 # print
-# print "Robot.__doc__:", Robot.__doc__
-# print "Robot.__init__.__doc__:", Robot.__init__.__doc__
+print "Robot.__doc__:", Robot.__doc__
+print "Robot.__init__.__doc__:", Robot.__init__.__doc__
 # print "Robot.die.__doc__:", Robot.die.__doc__
 # print "Robot.say_hi.__doc__:", Robot.say_hi.__doc__
 # print "Robot.how_many.__doc__:", Robot.how_many.__doc__

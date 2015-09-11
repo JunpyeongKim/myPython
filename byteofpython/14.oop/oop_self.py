@@ -1,7 +1,7 @@
-__author__ = 'Junpyeong Kim'
-
+# encoding=utf-8
 
 # oop_self.py
+
 # 14.1. The self
 # - http://www.swaroopch.com/notes/python/#self
 

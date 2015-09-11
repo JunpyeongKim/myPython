@@ -1,7 +1,7 @@
-__author__ = 'Junpyeong Kim'
-
+# encoding=utf-8
 
 # oop_methods.py
+
 # 14.3. Methods
 # - http://www.swaroopch.com/notes/python/#methods
 

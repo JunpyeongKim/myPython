@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # while.py
+
 # 9.2. The while Statement
 # - http://www.swaroopch.com/notes/python/#_the_while_statement
 
@@ -16,7 +19,7 @@ while running:
         print 'No. it is a little higher than that.'
     else:
         print 'No. it is a little lower than that.'
-# an option clause.
+# an optional else clause
 # - is always executed unless you break out of the loop with a break statement.
 else:
     print 'The while loop is over.'

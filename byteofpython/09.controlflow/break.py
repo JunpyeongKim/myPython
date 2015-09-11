@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # break.py
+
 # 9.4. The break Statement
 # - http://www.swaroopch.com/notes/python/#the_break_statement
 

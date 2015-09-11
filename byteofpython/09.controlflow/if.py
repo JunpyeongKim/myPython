@@ -1,11 +1,16 @@
+# encoding=utf-8
+
 # if.py
+
 # 9.1. The if statement
 # - http://www.swaroopch.com/notes/python/#_the_if_statement
+#   - no switch statement in Python
+#       - use a dictionary
 
 number = 23
 guess = int(raw_input('Enter an integer : '))
-# raw_int() returns a string.
-# the int is a class.
+    # raw_int() returns a string.
+    # the int is a class.
 
 # a colon followed by their corresponding block of statements.
 if guess == number:

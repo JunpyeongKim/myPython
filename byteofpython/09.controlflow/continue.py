@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # continue.py
+
 # 9.5. The continue Statement
 # - http://www.swaroopch.com/notes/python/#the_continue_statement
 

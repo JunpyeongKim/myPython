@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # for.py
+
 # 9.3. The for loop
 # - http://www.swaroopch.com/notes/python/#_the_for_loop
 

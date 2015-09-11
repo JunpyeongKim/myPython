@@ -7,7 +7,6 @@
 #   - http://inventwithpython.com/chapter19.html
 #   - http://inventwithpython.com/spritesAndSounds.py
 #   - http://inventwithpython.com/downloads/
-#   - http://inventwithpython.com/downloads/
 
 # Topics Covered In This Chapter:
 # ·        Sound and Image Files
@@ -36,6 +35,7 @@ BLACK = (0, 0, 0)
 # set up the block data structure
 player = pygame.Rect(300, 100, 40, 40)
 playerImage = pygame.image.load('player.png')
+    # BMP, PNG, JPG(JPEG), GIF
 playerStretchedImage = pygame.transform.scale(playerImage, (40, 40))
 foodImage = pygame.image.load('cherry.png')
 foods = []
@@ -55,8 +55,12 @@ MOVESPEED = 6
 
 # set up music
 pickUpSound = pygame.mixer.Sound('pickup.wav')
+    # The pygame.mixer module can play short sound effects.
 pygame.mixer.music.load('background.mid')
+    # The pygame.mixer.music module can play background music.
 pygame.mixer.music.play(-1, 0.0)
+    # Start the playback of the music stream
+    # play(loops=0, start=0.0) -> None
 musicPlaying = True
     # Pygame supports are MID, WAV, and MP3
 
@@ -112,7 +116,10 @@ while True:
     if foodCounter >= NEWFOOD:
         # add new food
         foodCounter = 0
-        foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - 20), random.randint(0, WINDOWHEIGHT - 20), 20, 20))
+        foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - 20),
+                                 random.randint(0, WINDOWHEIGHT - 20),
+                                 20,
+                                 20))
 
     # draw the black background onto the surface
     windowSurface.fill(BLACK)

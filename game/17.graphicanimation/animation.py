@@ -49,9 +49,9 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 # set up the block data structure
-b1 = {'rect':pygame.Rect(300, 80, 50, 100), 'color':RED, 'dir':UPRIGHT}
-b2 = {'rect':pygame.Rect(200, 200, 20, 20), 'color':GREEN, 'dir':UPLEFT}
-b3 = {'rect':pygame.Rect(100, 150, 60, 60), 'color':BLUE, 'dir':DOWNLEFT}
+b1 = {'rect': pygame.Rect(300, 80, 50, 100), 'color': RED, 'dir': UPRIGHT}
+b2 = {'rect': pygame.Rect(200, 200, 20, 20), 'color': GREEN, 'dir': UPLEFT}
+b3 = {'rect': pygame.Rect(100, 150, 60, 60), 'color': BLUE, 'dir': DOWNLEFT}
 blocks = [b1, b2, b3]
 
 # run the game loop
@@ -64,18 +64,22 @@ while True:
 
     # draw the black background onto the surface
     windowSurface.fill(BLACK)
+        # try commenting out
 
     for b in blocks:
         # move the block data structure
         if b['dir'] == DOWNLEFT:
             b['rect'].left -= MOVESPEED
             b['rect'].top += MOVESPEED
+
         if b['dir'] == DOWNRIGHT:
             b['rect'].left += MOVESPEED
             b['rect'].top += MOVESPEED
+
         if b['dir'] == UPLEFT:
             b['rect'].left -= MOVESPEED
             b['rect'].top -= MOVESPEED
+
         if b['dir'] == UPRIGHT:
             b['rect'].left += MOVESPEED
             b['rect'].top -= MOVESPEED
@@ -87,18 +91,21 @@ while True:
                 b['dir'] = DOWNLEFT
             if b['dir'] == UPRIGHT:
                 b['dir'] = DOWNRIGHT
+
         if b['rect'].bottom > WINDOWHEIGHT:
             # block has moved past the bottom
             if b['dir'] == DOWNLEFT:
                 b['dir'] = UPLEFT
             if b['dir'] == DOWNRIGHT:
                 b['dir'] = UPRIGHT
+
         if b['rect'].left < 0:
             # block has moved past the left side
             if b['dir'] == DOWNLEFT:
                 b['dir'] = DOWNRIGHT
             if b['dir'] == UPLEFT:
                 b['dir'] = UPRIGHT
+
         if b['rect'].right > WINDOWWIDTH:
             # block has moved past the right side
             if b['dir'] == DOWNRIGHT:
@@ -112,3 +119,5 @@ while True:
     # draw the window onto the screen
     pygame.display.update()
     time.sleep(0.02)
+        # try commenting out
+        # - all the blocks would look like a blur

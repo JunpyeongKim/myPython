@@ -70,7 +70,7 @@ pygame.init()
 mainClock = pygame.time.Clock()
 windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
 pygame.display.set_caption('Dodger')
-pygame.mouse.set_visible(False)
+pygame.mouse.set_visible(False)  # check True
 
 # set up fonts
 font = pygame.font.SysFont(None, 48)
@@ -148,6 +148,11 @@ while True:
             if event.type == MOUSEMOTION:
                 # If the mouse moves, move the player where the cursor is.
                 playerRect.move_ip(event.pos[0] - playerRect.centerx, event.pos[1] - playerRect.centery)
+                    # move_ip()
+                    # - in place
+                    # - will move the location of the Rect object horizontally or vertically by a number of pixels.
+                    # - changes the Rect object itself, rather than return a new Rect object with the changes.
+                    #   - a move() method doesn’t change the Rect object, but instead creates and returns a new Rect object in the new location.
 
         # Add new baddies at the top of the screen, if needed.
         if not reverseCheat and not slowCheat:

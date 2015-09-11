@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # function_global.py
+
 # 10.3. The global statement
 # - http://www.swaroopch.com/notes/python/#the_global_statement
 

@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # function_local.py
+
 # 10.2. Local Variables
 # - http://www.swaroopch.com/notes/python/#local_variables
 

@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # function_keyword.py
+
 # 10.5. Keyword Arguments
 # - http://www.swaroopch.com/notes/python/#keyword_arguments
 

@@ -1,6 +1,10 @@
+# encoding=utf-8
+
 # function_param.py
+
 # 10.1. Function Parameters
 # - http://www.swaroopch.com/notes/python/#function_parameters
+
 
 # the names given in a function definition are called "parameters".
 # a and b : parameters

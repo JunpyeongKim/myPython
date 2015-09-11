@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # function_return.py
+
 # 10.7. The return statement
 # - http://www.swaroopch.com/notes/python/#the_return_statement
 

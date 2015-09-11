@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # function_default.py
+
 # 10.4. Default Argument Values
 # - http://www.swaroopch.com/notes/python/#default_argument_values
 

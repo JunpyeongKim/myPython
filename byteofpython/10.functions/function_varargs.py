@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # function_varargs.py
+
 # 10.6. VarArgs parameters
 # - http://www.swaroopch.com/notes/python/#varargs_parameters
 

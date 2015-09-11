@@ -1,8 +1,14 @@
+# encoding=utf-8
+
 # function_docstring.py
+
 # 10.8. DocStrings
 # - http://www.swaroopch.com/notes/python/#docstrings
 #   - documentation strings, its shorter name docstrings.
 #   - Amazingly, we can even get the docstring back, when actually running.
+#   - The pydoc command
+#       - comes with your Python distribution
+#       - works similarly to help() using docstrings
 
 
 def print_max(x, y):

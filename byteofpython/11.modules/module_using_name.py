@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # module_using_name.py
+
 # 11.3. A module's name
 # - http://www.swaroopch.com/notes/python/#module_name
 

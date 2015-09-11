@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # mymodule_demo.py
+
 # 11.4. Making Your Own Modules
 # - http://www.swaroopch.com/notes/python/#_making_your_own_modules
 

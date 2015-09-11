@@ -1,4 +1,7 @@
+# encoding=utf-8
+
 # module_using_sys.py
+
 # 11. Modules
 # - http://www.swaroopch.com/notes/python/#module
 

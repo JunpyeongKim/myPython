@@ -7,6 +7,9 @@
 #   - http://inventwithpython.com/chapter13.html
 #   - http://inventwithpython.com/sonar.py
 #   - http://inventwithpython.com/downloads/
+# - There are three chests to collect,
+# - but the player has only sixteen sonar devices to use to find them
+# - each sonar device can only find the distance, not direction
 
 # Topics Covered In This Chapter:
 # ·        Data structures

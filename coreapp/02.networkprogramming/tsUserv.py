@@ -7,7 +7,6 @@
 # - 2.4.6 Creating a UDP Server
 #   - Example 2-6. UDP Timestamp Server
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch02/tsUserv.py
-
 #   - Executing
 #       - Mac: $ python tsUserv.py
 #       - Ubuntu: $ tsUserv.py

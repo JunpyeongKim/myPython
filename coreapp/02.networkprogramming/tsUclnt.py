@@ -7,7 +7,6 @@
 # - 2.4.7 Creating a UDP Client
 #   - Example 2-7. UDP Timestamp Client
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch02/tsUclnt.py
-
 #   - Executing
 #       - Mac: $ python tsUclnt.py
 #       - Ubuntu: $ tsUclnt.py

@@ -1,5 +1,6 @@
-02. Network Programming
-=======================
+# Chapter 2 Network Programming
+- http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch01/
+
 Example	Filename
 2-1	tsTserv.py
 2-2	tsTserv3.py

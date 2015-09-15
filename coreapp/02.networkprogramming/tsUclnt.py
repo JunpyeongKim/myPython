@@ -26,7 +26,17 @@ PORT = 21567
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
+'''
+    socket.socket(socket_family, socket_type, protocol=0)
+    - socket_family: socket.AF_INET/AF_UNIX
+    - socket_type: socket.SOCK_STREAM/SOCK_DGRAM
+
+    e.g. tcpSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+         udpSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+'''
 udpCliSock = socket(AF_INET, SOCK_DGRAM)
+
+# The only difference is that we do not have to establish a connection to the UDP server first.
 
 while True:
     data = raw_input('> ')

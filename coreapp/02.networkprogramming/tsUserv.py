@@ -28,13 +28,27 @@ PORT = 21567
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
+'''
+    socket.socket(socket_family, socket_type, protocol=0)
+    - socket_family: socket.AF_INET/AF_UNIX
+    - socket_type: socket.SOCK_STREAM/SOCK_DGRAM
+
+    e.g. tcpSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+         udpSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+'''
 udpSerSock = socket(AF_INET, SOCK_DGRAM)
 udpSerSock.bind(ADDR)
 
-while True:
-    print 'waiting for message...'
-    data, addr = udpSerSock.recvfrom(BUFSIZ)
-    udpSerSock.sendto('[%s] %s' % (ctime(), data), addr)
-    print '...received from ana returned to: ', addr
-
-udpSerSock.close()
+try:
+    while True:
+        print 'waiting for message...'  # Note: as opposed to "waiting for connection"
+        data, addr = udpSerSock.recvfrom(BUFSIZ)  # (passively) wait for a message (a datagram)
+        udpSerSock.sendto('[%s] %s' % (ctime(), data), addr)
+        print '...received from and returned to: ', addr
+except KeyboardInterrupt:
+    print 'except...KeyboardInterrupt'
+else:
+    print 'else...'
+finally:
+    print 'finally...'
+    udpSerSock.close()

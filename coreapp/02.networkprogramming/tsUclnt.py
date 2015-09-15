@@ -28,7 +28,7 @@ ADDR = (HOST, PORT)
 
 '''
     socket.socket(socket_family, socket_type, protocol=0)
-    - socket_family: socket.AF_INET/AF_UNIX
+    - socket_family: socket.AF_UNIX/AF_INET/AF_INET6/AF_NETLINK(v2.5)/AF_TIPC(2.6)
     - socket_type: socket.SOCK_STREAM/SOCK_DGRAM
 
     e.g. tcpSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

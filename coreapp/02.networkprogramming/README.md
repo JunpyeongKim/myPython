@@ -15,3 +15,19 @@ Example	Filename
 2-11	tsTclntTW.py
 extra	tsTservV6.py
 extra	tsTserv3V6.py
+
+The socket, select module
+- when developing low-level socket applications
+
+The asyncore, asynchat, SocketServer module
+- provide high-level functionality
+
+Twisted
+- provides a much more powerful and flexible framework
+- http://twistedmatrix.com
+
+Concurrence
+- A more modern networking framework
+- the engine behind the Dutch social network, Hyves.
+- a high performance I/O system paired with libevent, the lower-level event callback dispatching system.
+- http://opensource.hyves.org/concurrence

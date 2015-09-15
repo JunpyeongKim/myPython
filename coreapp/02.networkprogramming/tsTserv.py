@@ -19,8 +19,6 @@ from socket import *
 from time import ctime
 
 '''
-    [pseudocode]
-
     ss = socket()                   # create server socket
     ss.bind()                       # bind socket to address
     ss.listen()                     # listen for connections
@@ -63,7 +61,7 @@ while True:
         if not data:
             break
         tcpCliSock.send('[%s] %s' % (ctime(), data))  # v2
-            # v3 - an ASCII bytes "string" rather than in Unicode.
+            # v3: an ASCII bytes "string" rather than in Unicode.
         # # tcpCliSock.send('[%s] %s' % (bytes(ctime(), 'utf-8'), data))  # v3
         # tcpCliSock.send(bytes('[%s] %s' % (ctime(), data.decode('utf-8')), 'utf-8'))  # v3
 

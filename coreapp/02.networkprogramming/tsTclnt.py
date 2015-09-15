@@ -32,6 +32,14 @@ PORT = 21567
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
+'''
+    socket.socket(socket_family, socket_type, protocol=0)
+    - socket_family: socket.AF_INET/AF_UNIX
+    - socket_type: socket.SOCK_STREAM/SOCK_DGRAM
+
+    e.g. tcpSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+         udpSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+'''
 tcpCliSock = socket(AF_INET, SOCK_STREAM)  # IPv4
 # tcpCliSock = socket(AF_INET6, SOCK_STREAM)  # IPv6
 tcpCliSock.connect(ADDR)
@@ -47,6 +55,6 @@ while True:
     if not data:
         break
     print data  # v2
-    # print(data.decode('utf-8'))  # v3
+    # print(data.decode('utf-8'))  # v3; have to decode the string that comes from the server.
 
 tcpCliSock.close()

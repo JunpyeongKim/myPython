@@ -49,22 +49,28 @@ tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)  # simply a maximum number of incoming connection request to accept
                       # before connections are turned away or refused.
 
-while True:
-    print 'waiting for connecting...'  # v2
-    # print('waiting for connecting...')  # v3
-    tcpCliSock, addr = tcpSerSock.accept()  # blocking
-    print '...connected from:', addr  # v2
-    # print('...connected from:', addr)  # v3
-
+try:
     while True:
-        data = tcpCliSock.recv(BUFSIZ)
-        if not data:
-            break
-        tcpCliSock.send('[%s] %s' % (ctime(), data))  # v2
-            # v3: an ASCII bytes "string" rather than in Unicode.
-        # # tcpCliSock.send('[%s] %s' % (bytes(ctime(), 'utf-8'), data))  # v3
-        # tcpCliSock.send(bytes('[%s] %s' % (ctime(), data.decode('utf-8')), 'utf-8'))  # v3
+        print 'waiting for connecting...'  # v2
+        # print('waiting for connecting...')  # v3
+        tcpCliSock, addr = tcpSerSock.accept()  # blocking
+        print '...connected from:', addr  # v2
+        # print('...connected from:', addr)  # v3
 
-    tcpCliSock.close()
+        while True:
+            data = tcpCliSock.recv(BUFSIZ)
+            if not data:
+                break
+            tcpCliSock.send('[%s] %s' % (ctime(), data))  # v2
+                # v3: an ASCII bytes "string" rather than in Unicode.
+            # # tcpCliSock.send('[%s] %s' % (bytes(ctime(), 'utf-8'), data))  # v3
+            # tcpCliSock.send(bytes('[%s] %s' % (ctime(), data.decode('utf-8')), 'utf-8'))  # v3
 
-tcpSerSock.close()
+        tcpCliSock.close()
+except KeyboardInterrupt:
+    print 'exception...KeyboardInterrupt'
+else:
+    print 'else...'
+finally:
+    print 'finally...'
+    tcpSerSock.close()

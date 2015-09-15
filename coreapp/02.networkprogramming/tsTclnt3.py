@@ -38,6 +38,6 @@ while True:
     data = tcpCliSock.recv(BUFSIZ)
     if not data:
         break
-    print(data.decode('utf-8'))
+    print(data.decode('utf-8'))  # have to decode the string that comes from the server.
 
 tcpCliSock.close()

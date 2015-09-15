@@ -36,18 +36,23 @@ tcpSerSock = socket(AF_INET6, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
 tcpSerSock.listen(5)
 
-while True:
-    print 'waiting for connecting...'
-    tcpCliSock, addr = tcpSerSock.accept()
-    print '...connected from:', addr
-
+try:
     while True:
-        data = tcpCliSock.recv(BUFSIZ)
-        if not data:
-            break
-        tcpCliSock.send('[%s] %s' % (ctime(), data))
+        print 'waiting for connecting...'
+        tcpCliSock, addr = tcpSerSock.accept()
+        print '...connected from:', addr
 
-    tcpCliSock.close()
+        while True:
+            data = tcpCliSock.recv(BUFSIZ)
+            if not data:
+                break
+            tcpCliSock.send('[%s] %s' % (ctime(), data))
 
-tcpSerSock.close()
-
+        tcpCliSock.close()
+except KeyboardInterrupt:
+    print 'exception...KeyboardInterrupt'
+else:
+    print 'else...'
+finally:
+    print 'finally...'
+    tcpSerSock.close()

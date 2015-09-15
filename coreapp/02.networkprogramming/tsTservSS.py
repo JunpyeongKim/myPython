@@ -13,6 +13,22 @@
 
 
 import SocketServer
+'''
+    # >= v2.4, multiline import
+    from SocketServer import (TCPServer as TCP,
+                              StreamRequestHandler as SRH)
+    # < v2.4
+    from SocketServer import TCPServer as TCP, StreamRequestHandler as SRH
+'''
+    # BaseServer
+    # - TCPServer / UDPServer
+    # - UnixStreamServer / UnixDatagramServer
+    # - ForkingTCPServer / ForkingUDPServer
+    # - ThreadingTCPServer / ThreadingUDPServer
+    # BaseRequestHandler
+    # - StreamRequestHandler
+    # - DatagramRequestHandler
+    # ForkingMixIn / ThreadingMixIn
 from time import ctime
 
 HOST = ''
@@ -21,6 +37,7 @@ ADDR = (HOST, PORT)
 
 
 class MyRequestHandler(SocketServer.StreamRequestHandler):
+    # override BaseRequestHandler.handle()
     def handle(self):
         print '...connected from: ', self.client_address
         self.wfile.write('[%s] %s\n' % (
@@ -29,4 +46,12 @@ class MyRequestHandler(SocketServer.StreamRequestHandler):
 
 tcpSerSock = SocketServer.TCPServer(ADDR, MyRequestHandler)
 print 'waiting for connection...'
-tcpSerSock.serve_forever()
+try:
+    tcpSerSock.serve_forever()
+except KeyboardInterrupt:
+    print 'except...KeyboardInterrupt'
+else:
+    print 'else...'
+finally:
+    print 'finally...'
+    tcpSerSock.server_close()

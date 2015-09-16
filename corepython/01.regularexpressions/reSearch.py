@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding=utf-8
 
-# re.search.py
+# reSearch.py
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 1.3.5 Looking for a Pattern within a String with search() (Searching versus Matching)

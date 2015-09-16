@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding=utf-8
 
-# re.match.py
+# reMatch.py
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 1.3.4 Matching Strings with match()

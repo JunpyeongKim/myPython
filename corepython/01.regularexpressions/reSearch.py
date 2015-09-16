@@ -17,10 +17,11 @@
 import re
 
 m = re.match('foo', 'seafood')
+print "'seafood'.match():", m
 if m is not None:
-    print 'match().group():', m.group()
-
+    print '...group():', m.group()
 
 m = re.search('foo', 'seafood')
+print "'seafood'.search():", m
 if m is not None:
-    print 'search().group():', m.group()
+    print '...group():', m.group()

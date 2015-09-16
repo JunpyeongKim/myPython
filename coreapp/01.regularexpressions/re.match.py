@@ -29,5 +29,7 @@ print '...group():', m.group()
 
 print 'group():', re.match('foo', 'foo on  the table').group()
 
+print 'group():', re.match('foo', 'foobar on  the table').group()
+
 # AttributeError: 'NoneType' object has no attribute 'group'
-print 'group():', re.match('foo', 'bar on  the table').group()
+# print 'group():', re.match('foo', 'bar on  the table').group()

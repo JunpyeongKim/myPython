@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # encoding=utf-8
 
-# getLatestFTP.py
+# getLatestFTP3.py
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 3.2.6 A Client Program FTP Example
 #   - Example 3-1. FTP Download Example
-#       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch03/getLatestFTP.py
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch03/getLatestFTP3.py
 #   - https://docs.python.org/2/library/ftplib.html
 
@@ -44,49 +43,35 @@ def main():
     try:
         f = ftplib.FTP(HOST)
     except (socket.error, socket.gaierror) as e:
-        print 'ERROR: cannot reach "%s"' % HOST  # v2
-        # print('ERROR: cannot reach "%s"' % HOST)  # v3
+        print('ERROR: cannot reach "%s"' % HOST)
         return
-
-    print '*** Connected to host "%s"' % HOST  # v2
-    # print('*** Connected to host "%s"' % HOST)  # v3
+    print('*** Connected to host "%s"' % HOST)
 
     try:
         f.login()
     except ftplib.error_perm:
-        print 'ERROR: cannot login anonymously'  # v2
-        # print('ERROR: cannot login anonymously')  # v3
+        print('ERROR: cannot login anonymously')
         f.quit()
         return
-
-    print '*** Logged in as "anonymous"'  # v2
-    # print('*** Logged in as "anonymous"')  # v3
+    print('*** Logged in as "anonymous"')
 
     try:
         f.cwd(DIRN)
     except ftplib.error_perm:
-        print 'ERROR: cannot CD to "%s" folder' % DIRN  # v2
-        # print('ERROR: cannot CD to "%s" folder' % DIRN)  # v3
+        print('ERROR: cannot CD to "%s" folder' % DIRN)
         f.quit()
         return
-
-    print '*** Changed to "%s"' % DIRN  # v2
-    # print('*** Changed to "%s"' % DIRN)  # v3
+    print('*** Changed to "%s" folder' % DIRN)
 
     try:
-        f.retrbinary('RETR %s' % FILE, open(FILE, 'wb').write)
-            # retrbinary(cmd, cb[, bs=8192[, ra]])
-            # - Download binary file
-            # - callback cb for processing each block
+        f.retrbinary('RETR %s' % FILE,
+            open(FILE, 'wb').write)
     except ftplib.error_perm:
-        print 'ERROR: cannot read file "%s"' % FILE  # v2
-        print('ERROR: cannot read file "%s"' % FILE)  # v3
+        print('ERROR: cannot read file "%s"' % FILE)
         if os.path.exists(FILE):
             os.unlink(FILE)
     else:
-        print '*** Downloaded "%s" to CWD' % FILE  # v2
-        # print('*** Downloaded "%s" to CWD' % FILE)  # v3
-
+        print('*** Downloaded "%s" to CWD' % FILE)
     f.quit()
 
 if __name__ == '__main__':

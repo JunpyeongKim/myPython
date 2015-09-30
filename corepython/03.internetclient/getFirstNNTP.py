@@ -5,15 +5,27 @@
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 3.3.6 A Client Program NNTP Example
+#   - Network News Transfer Protocol
 #   - Example 3-2. NNTP Download Example
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch03/getFirstNNTP.py
+#   - https://docs.python.org/2/library/nntplib.html?highlight=nntp#module-nntplib
 
 
 import nntplib
 import socket
 
-HOST = 'your.nntp.server'
-GRNM = 'comp.lang.python'
+'''
+    from nntplib import NNTP
+    s = NNTP('news.gmane.org')
+    resp, count, first, last, name = s.group('gmane.comp.python.committers')
+    print 'Group', name, 'has', count, 'articles, range', first, 'to', last
+    resp, subs = s.xhdr('subject', first + '-' + last)
+    for id, sub in subs[-10:]: print id, sub
+    s.quit()
+'''
+
+HOST = 'news.gmane.org'  # 'your.nntp.server'
+GRNM = 'gmane.comp.python.committers'  # 'comp.lang.python'
 USER = 'wesley'
 PASS = "you'llNeverGuess"
 
@@ -49,6 +61,13 @@ def main():
 
     print '*** Found newsgroup "%s"' % GRNM
 
+    # xhdr() returns a 2-tuple consisting of
+    # a server response (rsp) and a list of the headers in the range we specify.
+    #   - Because we are only requesting this information for one message (the last one),
+    #     just take the first element of the list (hdr[0]).
+    #       - That data item is a 2-tuple consisting of the article number and the data string.
+    #   - Because we already know the article number (we give it in our range request),
+    #     we are only interested in the second item, the data string (hdr[0][1]).
     rng = '%s-%s' % (lst, lst)
     rsp, frm = n.xhdr('from', rng)
     rsp, sub = n.xhdr('subject', rng)
@@ -82,6 +101,7 @@ def displayFirst20(data):
                 lower.endswith('wrote:'):
                 continue
 
+        # If there is more than one blank line consecutively, only show the first one
         if not lastBlank or (lastBlank and line):
             print '    %s' % line
             if line:

@@ -8,7 +8,6 @@
 #   - Network News Transfer Protocol
 #   - Example 3-2. NNTP Download Example
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch03/getFirstNNTP.py
-#       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch03/getFirstNNTP3.py
 #   - https://docs.python.org/2/library/nntplib.html?highlight=nntp#module-nntplib
 
 
@@ -34,37 +33,33 @@ PASS = "you'llNeverGuess"
 def main():
     try:
         n = nntplib.NNTP(HOST)  #, user=USER, password=PASS)
-    except socket.gaierror, e:  # v2
-    # except socket.gaierror as e:  # v3
-        print 'ERROR: cannot reach host "%s"' % HOST
-        print '    ("%s")' % eval(str(e))[1]
+    except socket.gaierror as e:
+        print('ERROR: cannot reach host "%s"' % HOST)
+        print('    ("%s")' % eval(str(e))[1])
         return
-    except nntplib.NNTPPermanentError, e:  # v2
-    # except nntplib.NNTPPermanentError as e:  # v3
-        print 'ERROR: access denied on "%s"' % HOST
-        print '    ("%s")' % str(e)
+    except nntplib.NNTPPermanentError as e:
+        print('ERROR: access denied on "%s"' % HOST)
+        print('    ("%s")' % str(e))
         return
 
-    print '*** Connected to host "%s"' % HOST
+    print('*** Connected to host "%s"' % HOST)
 
     try:
         rsp, ct, fst, lst, grp = n.group(GRNM)
-    except nntplib.NNTPTemporaryError, e:  # v2
-    # except nntplib.NNTPTemporaryError as e:  # v3
-        print 'ERROR: cannot connect to group "%s"' % GRNM
-        print '    ("%s")' % str(e)
-        print '    Server may require authentication'
-        print '    Uncomment/edit login line above'
+    except nntplib.NNTPTemporaryError as e:
+        print('ERROR: cannot connect to group "%s"' % GRNM)
+        print('    ("%s")' % str(e))
+        print('    Server may require authentication')
+        print('    Uncomment/edit login line above')
         n.quit()
         return
-    except nntplib.NNTPTemporaryError, e:  # v2
-    # except nntplib.NNTPTemporaryError as e:  # v3
-        print 'ERROR: group "%s" unavailable' % GRNM
-        print '    ("%s")' % str(e)
+    except nntplib.NNTPTemporaryError as e:
+        print('ERROR: group "%s" unavailable' % GRNM)
+        print('    ("%s")' % str(e))
         n.quit()
         return
 
-    print '*** Found newsgroup "%s"' % GRNM
+    print('*** Found newsgroup "%s"' % GRNM)
 
     # xhdr() returns a 2-tuple consisting of
     # a server response (rsp) and a list of the headers in the range we specify.
@@ -78,11 +73,11 @@ def main():
     rsp, sub = n.xhdr('subject', rng)
     rsp, dat = n.xhdr('date', rng)
 
-    print '''*** Found last article (#%s):\n
+    print('''*** Found last article (#%s):
     From: %s
     Subject: %s
     Date: %s
-    ''' % (lst, frm[0][1], sub[0][1], dat[0][1])
+    ''' % (lst, frm[0][1], sub[0][1], dat[0][1]))
 
     rsp, anum, mid, data = n.body(lst)
     displayFirst20(data)
@@ -90,7 +85,7 @@ def main():
 
 
 def displayFirst20(data):
-    print '*** First (<= 20) meaningful lines:\n'
+    print('*** First (<= 20) meaningful lines:\n')
 
     count = 0
     lines = (line.rstrip() for line in data)
@@ -108,7 +103,7 @@ def displayFirst20(data):
 
         # If there is more than one blank line consecutively, only show the first one
         if not lastBlank or (lastBlank and line):
-            print '    %s' % line
+            print('    %s' % line)
             if line:
                 count += 1
                 lastBlank = False
@@ -120,3 +115,4 @@ def displayFirst20(data):
 
 if __name__ == '__main__':
     main()
+

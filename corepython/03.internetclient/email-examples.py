@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding=utf-8
 
-# email-examples.py
+# email-examples.py - demo creation of email messages
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 3.4 E-Mail

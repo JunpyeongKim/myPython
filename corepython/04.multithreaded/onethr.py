@@ -9,6 +9,7 @@
 #       - If we were to execute loop0() and loop1() sequentially in a one process or
 #         single-threaded program,
 #         the total execution time would be at least 6 seconds.
+#       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch04/onethr.py
 
 
 from time import sleep, ctime

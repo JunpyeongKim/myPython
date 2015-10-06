@@ -8,6 +8,7 @@
 #   - Example 4-2. Using the thread Module
 #       - onethr.py + thread
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch04/mtsleepA.py
+#   - the overall runtime is no better than in our single-threaded version.
 
 
 from time import sleep, ctime

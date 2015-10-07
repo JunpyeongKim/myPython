@@ -56,7 +56,7 @@ def loop(nloop, nsec):
 def main():
     print('starting at:', ctime())
     threads = []
-    nloops = range(len(loops))
+    nloops = list(range(len(loops)))
 
     for i in nloops:    # create all threads
         t = threading.Thread(target=ThreadFunc(loop, (i, loops[i]), loop.__name__))

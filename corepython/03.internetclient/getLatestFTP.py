@@ -36,8 +36,8 @@ import socket
 '''
 
 HOST = 'ftp.debian.org'     # 'ftp.mozilla.org'
-DIRN = 'debian'             #'pub/mozilla.org/webtools'
-FILE = 'README.html'        #'bugzilla-LATEST.tar.gz'
+DIRN = 'debian'             # 'pub/mozilla.org/webtools'
+FILE = 'README.html'        # 'bugzilla-LATEST.tar.gz'
 
 
 def main():

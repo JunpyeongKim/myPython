@@ -22,7 +22,11 @@
 #   - Create Thread Instance, Passing in Function
 #       - Example 4-4. Using the threading Module
 #           - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch04/mtsleepC3.py
-
+#       - Gone are the locks
+#       - we simply call the join() method for each thread.
+#           - a timeout
+#           - much cleaner than an infinite loop (known as spin locks)
+#           - is useful only when you want to wait for thread completion.
 
 
 import threading

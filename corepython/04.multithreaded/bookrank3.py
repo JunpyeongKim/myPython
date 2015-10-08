@@ -8,6 +8,7 @@
 #   - Example 4-9. Book Rankings "Screenscraper"
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch04/bookrank3.py
 
+from atexit import register
 from re import compile
 from threading import Thread
 from time import ctime
@@ -54,6 +55,11 @@ def main():
     print('At', ctime(), 'on Amazon...')
     for isbn in ISBNs:
         Thread(target=_showRanking, args=(isbn,)).start()  #_showRanking(isbn)
+
+
+@register
+def _atexit():
+    print('all DONE at:', ctime())
 
 
 if __name__ == '__main__':

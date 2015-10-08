@@ -32,7 +32,7 @@ class MyThread(threading.Thread):
         if self.verb:
             print 'starting', self.name, 'at:', ctime()
 
-        self.res = self(*self.args)
+        self.res = self.func(*self.args)
 
         if self.verb:
             print self.name, 'finished at:', ctime()

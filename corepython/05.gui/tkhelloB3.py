@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding=utf-8
 
-# tkhelloB.py
+# tkhelloB3.py
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 5.3.2 Button Widget
@@ -9,9 +9,9 @@
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch05/tkhelloB.py
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch05/tkhelloB3.py
 
-import Tkinter
+import tkinter
 
-top = Tkinter.Tk()
-quit = Tkinter.Button(top, text='Hello World!', command=top.quit)
+top = tkinter.Tk()
+quit = tkinter.Button(top, text='Hello World!', command=top.quit)
 quit.pack()
-Tkinter.mainloop()
+tkinter.mainloop()

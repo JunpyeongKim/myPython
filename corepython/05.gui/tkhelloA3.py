@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding=utf-8
 
-# tkhelloA.py
+# tkhelloA3.py
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 5.3.1 Label Widget

@@ -8,7 +8,7 @@
 #   - Example 5-7. Tix GUI Demo
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch05/animalTix.py
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch05/animalTix3.py
-#   - Not work
+#   - _tkinter.TclError: can't find package Tix
 
 from tkinter import Label, Button, END
 from tkinter.tix import Tk, Control, ComboBox

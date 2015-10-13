@@ -7,7 +7,6 @@
 # - 5.4.3 wxWidgets and wxPython
 #   - Example 5-9. wxPython GUI Demo
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch05/animalWx.py
-#       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch05/animalWx3.py
 #   - ImportError: No module named wx
 
 

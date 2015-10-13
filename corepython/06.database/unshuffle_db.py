@@ -5,7 +5,7 @@
 
 # Core Python Application Programming 3E, Wesley J. Chun
 # - 6.2.8 A Database Adapter Example Application
-#   - Example 5-6. File System Traversal GUI
+#   - Example 
 #       - http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch06/unshuffle_db.py
 
 

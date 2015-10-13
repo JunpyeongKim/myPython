@@ -36,6 +36,11 @@ top.title('Road Signs')
 
 Button(top, text='QUIT', command=top.quit, bg='red', fg='white').pack()
 
+# two levels of PFA.
+#   - 1) templatizes the Button class and the root window top
+#       - every time we call MyButton,
+#       - it will call Button (Tkinter.Button() creates a button.) with top as its first argument.
+#   - 2) templatize MyButton
 MyButton = pto(Button, top)
 CritButton = pto(MyButton, command=critCB, bg='white', fg='red')
 WarnButton = pto(MyButton, command=warnCB, bg='goldenrod1')

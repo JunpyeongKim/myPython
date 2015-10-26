@@ -124,3 +124,36 @@
 - Model 클래스의 Attribute --> Table's Column
 
 
+### 3.3.3 Template - 화면 UI 설계
+- 자체 Template 시스템을 가진다
+    - 문법을 제공한다.
+- Template 에서 Python 코드를 직접 사용 가능
+- *.html 확장자를 가지며 적절한 디렉토리에 위치시켜야 한다.
+    - TEMPLATE_DIRS 또는 INSTALLED_APPS 에 지정된 디렉토리를 지정된 순서대로 검색한다.
+        - (*) settings.py (프로젝트 설정 파일) 에 정의되어 있다.
+
+
+__settings.py__
+
+
+    INSTALLED_APPS = (
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'polls'
+    )
+    
+    TEMPLATE_DIRS = ['/home/shkim/pyBook/ch03/templates' ]
+    
+    (순서) TEMPLATE_DIRS --> INSTALLED_APPS
+        /home/shkim/pyBook/ch03/templates
+        /usr/lib/python2.7/site-packages/django/contrib/admin/templates
+        /usr/lib/python2.7/site-packages/django/contrib/auth/templates
+        /usr/lib/python2.7/site-packages/django/contrib/contenttypes/templates
+        /usr/lib/python2.7/site-packages/django/contrib/sessions/templates
+        /usr/lib/python2.7/site-packages/django/contrib/messages/templates
+        /usr/lib/python2.7/site-packages/django/contrib/staticfiles/templates
+        /home/shkim/pyBook/ch03/pools/templates

@@ -99,3 +99,28 @@
     >>> import django
     >>> print django.get_version()
 
+
+## 3.3 Django에서의 Application 개발 방식
+- 전체 프로그램 --> Project
+- 모듈화된 단위 프로그램 --> Application
+
+
+### 3.3.1 MTV 패턴
+- MVC --> MTV
+    - View --> Template
+    - Controller --> View
+- 처리 과정
+    - 클라이어트 요청 --> URL conf 모듈이 URL 분석 --> URL 처리를 담당하는 View의 로직이 수행
+        - --> DB 처리가 필요하면 Model을 통해서 처리
+    - --> View의 로직 처리 결과를 Template 을 사용하여 HTML 생성 --> HTML을 클라이언트에게 전송
+
+
+### 3.3.2 Model - 데이터베이스 설계
+- Model : 사용될 데이터에 대한 정의를 담고 있는 클래스
+    - ORM(Object-Relational Mapping) 사용 <-- SQL 없이도 DB Access 가능
+        - (*) Database Engine(SQLite3, MySQL, PostgreSQL, ...)을 변경하더라도 ORM을 통한 API 변결 불필요. 
+    - (*) 직접 SQL을 사용해 Database의 데이터를 읽어올 수 있다.
+- Model 클래스 --> Table
+- Model 클래스의 Attribute --> Table's Column
+
+

@@ -9,14 +9,6 @@
 
 from django.db import models
 
-'''
-CREATE TABLE myapp_person (
-  id serial NOT NULL PRIMARY KEY,
-  first_name varchar(30) NOT NULL,
-  last_name varchar(30) NOT NULL
-);
-'''
-
 
 class Person(models.Model):
     """

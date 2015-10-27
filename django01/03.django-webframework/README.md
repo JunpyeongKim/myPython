@@ -173,3 +173,36 @@ __settings.py__
 - 함수 또는 클래스의 메소드로 작성된다.
 - views.py
 
+## 3.4 프로젝트 뼈대 만들기
+- (*) 용어의 개념을 웹 서버 개발 측면에서 좀 더 구체화하여 사용하고 있다.
+- Project : 전체 프로그램
+- Application : 프로젝트를 몇 개의 기능 그룹으로 나누었을 때 이 하위 서브 프로그램
+    - Project 디렉토리와 Application 디렉토리를 구분하고 있다.
+        - Project & Application : Python Package Directory에 해당한다. <-- "__init.py__" 이 존재하는 디렉토리
+    - 하나의 Application이 여러 개의 Project에 포함될 수 있다. <-- 재사용
+    - Project를 모아서 더 큰 Project를 만들수 있다.
+
+
+### 3.4.1 프로젝트 생성
+ 
+
+    $ django-admin.py startproject mysite
+        - mysite/ : Project 관련 Directory/File 을 모으는 역할만 한다. --> 이름 변경 가능 --> ch3/ 로 변경
+        - mysite/myste/ : Project Directory
+    $ mv mysite ch3
+
+
+### 3.4.2 애플리케이션 생성
+
+
+    $ python manage.py startapp polls
+    
+### 3.4.3 데이터베이스 변경사항 반영
+- Default : SQLite3 Database Engine 사용
+- Django 는 모든 웹 프로젝트 개발시 반드시 사용자와 사용자 그룹 테이블이 필요하다고 가정하고 설계되었다. 
+
+
+    $ python manage.py migrate
+        - 사용자 / 사용자 그룹 테이블을  생성하기 위해
+        - db.sqlite3 생성
+

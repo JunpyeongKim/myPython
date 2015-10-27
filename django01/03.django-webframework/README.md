@@ -122,6 +122,7 @@
     - (*) 직접 SQL을 사용해 Database의 데이터를 읽어올 수 있다.
 - Model 클래스 --> Table
 - Model 클래스의 Attribute --> Table's Column
+- models.py 에 정의
 
 
 ### 3.3.3 Template - 화면 UI 설계
@@ -157,3 +158,9 @@ __settings.py__
         /usr/lib/python2.7/site-packages/django/contrib/messages/templates
         /usr/lib/python2.7/site-packages/django/contrib/staticfiles/templates
         /home/shkim/pyBook/ch03/pools/templates
+
+
+### 3.3.4 URLconf - URL 설계
+- 파이썬의 URL 지정 방식을 Elegant URL 이라고 부른다.
+- urls.py
+    - URL & 처리 함수(View)를 매핑

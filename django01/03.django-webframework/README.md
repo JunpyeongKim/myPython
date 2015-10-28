@@ -248,3 +248,47 @@ __Directory 확인_
 
     # Ubuntu Only
     $ tree ch3
+
+
+## 3.5 애플리케이션 개발하기 - 설계
+- 화면 UI 설계
+    - View & Template 코딩
+    - index.html / detail.html / results.html
+- Table 설계
+    - Model 코딩 
+    - Question / Choice
+- (*) 독립적으로 개발 가능한 Model 을 먼저 코딩 
+
+
+## 3.6 애플리케이션 개발하기 - Model 코딩
+
+__Procedure__
+
+
+    # Database 지정
+    $ vi settings.py
+    
+    # Table 정의 
+    $ vi models.py
+    
+    # 정의된 Table을 Admin에서 보이도록 한다
+    $ vi admin.py
+    
+    # 변경 사항 추출 
+    $ python manage.py makemigrations
+    
+    # 변경 사항을 Database에 반영
+    $ python manage.py migrate
+    
+    $ python manage.py runserver
+
+
+### 3.6.1 데이터베이스 지정
+- settings.py 확인 
+    - DATABASES
+        - DATABASES.default.ENGINE : sqlite3
+        - DATABASES.default.NAME : db.sqlite3
+    - (*) 프로젝트의 애플리케이션들은 모두 설정 파일에 지정되어야 한다
+        - INSTALLED_APPS.polls
+    - (*) Timezone
+        - TIME_ZONE : UTC --> Asia/Seoul

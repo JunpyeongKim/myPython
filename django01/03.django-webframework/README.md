@@ -206,3 +206,45 @@ __settings.py__
         - 사용자 / 사용자 그룹 테이블을  생성하기 위해
         - db.sqlite3 생성
 
+
+### 3.4.4 지금까지 작업 확인하기
+- runserver : 간단한 테스트용 웹 서버
+
+
+__runserver__
+    # 현재 명령을 실행중인 서버의 IP 주소로 웹 접속 요청을 받는 경우
+    $ python manage.py runserver 0.0.0.0:8000
+    
+    Browser --> http://your.server.ip.address:8000
+    
+        # Default(127.0.0.1:8000)
+        $ python manage.py runserver
+        
+        # Default(127.0.0.1) + 8888 port
+        $ python manage.py runserver 8888
+        
+        # Background 에서 웹서버를 실행  
+        $ python manage.py runserver 0.0.0.0:8000 &
+    
+
+__Admin 접속__
+
+
+    Browser --> http://your.server.ip.address:8000/admin
+    - 생성된 계정이 없어 접속 불가
+
+
+__Administrator(Super User) 생성__
+
+
+    $ python manage.py createsuperuser
+        - djangoadmin / djangoadmin / a@b.com
+        - Users, Groups 테이블 확인 가능
+            - settings.py 에 django.contrib.admin 애플리케이션이 등록되어 있기 때
+    
+
+__Directory 확인_
+
+
+    # Ubuntu Only
+    $ tree ch3

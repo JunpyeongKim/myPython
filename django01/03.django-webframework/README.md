@@ -319,3 +319,8 @@ __Procedure__
     
     # Django가 사용하는 SQL 확인 가능
     $ python manage.py sqlmigrate polls 0001
+
+
+### 3.6.5 지금까지 작업 확인하기
+- Open http://your.com.ip.address/admin
+

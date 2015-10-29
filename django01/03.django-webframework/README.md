@@ -343,4 +343,15 @@ __Procedure__
     - django.conf.urls.patterns()
     - django.conf.urls.url()
 - mysite/settings.py
-    - ROOT_URLCONF : Django 가 URL 분석시 이 곳에 정의된 urls.py 를 가장 먼저 분석  
+    - ROOT_URLCONF : Django 가 URL 분석시 이 곳에 정의된 urls.py 를 가장 먼저 분석
+
+
+### 3.7.2 View 함수 index() 및 템플릿 작성
+- polls/templates/polls/index.html
+    - TEMPLATE_DIRS, INSTALLED_APPS 의 디렉토리를 검색
+    - 템플릿 파일 충돌 방지위해 templates/ 하위에 다시 애플리케이션명으로 디렉토리 생성한다 
+
+
+    $ mkdir -p polls/templates/polls
+
+

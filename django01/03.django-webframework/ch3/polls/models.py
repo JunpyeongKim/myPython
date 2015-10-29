@@ -10,12 +10,12 @@ from django.db import models
     Column          |   Type            |   Constraints                 |   Remark
     ------------------------------------------------------------------------------------
     id              |   integer         |   NotNull, PK, AutoIncrement    |   Primary Key
-    question_test   |   varchar(200)    |   NotNull                       |   질문 문장
+    question_text   |   varchar(200)    |   NotNull                       |   질문 문장
     pub_date        |   datetime        |   NotNull                       |   질문 생성 시각
 
     CREATE TABLE Question (
         id INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
-        question_test   VARCHAR(200)    NOT NULL,
+        question_text   VARCHAR(200)    NOT NULL,
         pub_date    DATETIME    NOT NULL
     );
 '''

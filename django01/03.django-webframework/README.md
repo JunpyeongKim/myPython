@@ -197,6 +197,7 @@ __settings.py__
 
     $ python manage.py startapp polls
     
+
 ### 3.4.3 데이터베이스 변경사항 반영
 - Default : SQLite3 Database Engine 사용
 - Django 는 모든 웹 프로젝트 개발시 반드시 사용자와 사용자 그룹 테이블이 필요하다고 가정하고 설계되었다. 
@@ -297,3 +298,24 @@ __Procedure__
 ### 3.6.2 테이블 정의
 - polls 애플리케이션은 Question & Choice 두 개의 테이블 필요
 - polls/models.py
+    - django.db.models
+        - Model
+        - CharField
+        - DateTimeField
+        - IntegerField
+        - ForeignKey
+
+
+### 3.6.3 Admin 사이트에 테이블 반영
+- polls/admin.py
+    - admin.site.register()
+
+
+### 3.6.4 데이터베이스 변경사항 반영
+
+
+    $ python manage.py makemigrations
+    $ python manage.py migrate
+    
+    # Django가 사용하는 SQL 확인 가능
+    $ python manage.py sqlmigrate polls 0001

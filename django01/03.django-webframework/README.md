@@ -355,3 +355,4 @@ __Procedure__
     $ mkdir -p polls/templates/polls
 
 
+### 3.7.3 View 함수 detail() 및 폼 템플릿 작성

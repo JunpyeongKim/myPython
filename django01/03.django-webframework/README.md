@@ -324,3 +324,23 @@ __Procedure__
 ### 3.6.5 지금까지 작업 확인하기
 - Open http://your.com.ip.address/admin
 
+
+## 3.7 애플리케이션 개발하기 - View 및 Template 코딩
+- URL & View
+    - 항상 1:1 관계로 매핑
+    - URL/View 매핑을 URLconf 라고 한다
+    - urls.py
+- URLconf 설계
+    - /polls/           : index()
+    - /polls/5/         : detail()
+    - /polls/5/votes/   : vote()
+    - /polls/5/results/ : results()
+    - /admin/           : Django
+
+
+### 3.7.1 URLconf 코딩
+- polls/urls.py
+    - django.conf.urls.patterns()
+    - django.conf.urls.url()
+- mysite/settings.py
+    - ROOT_URLCONF : Django 가 URL 분석시 이 곳에 정의된 urls.py 를 가장 먼저 분석  

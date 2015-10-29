@@ -292,3 +292,8 @@ __Procedure__
         - INSTALLED_APPS.polls
     - (*) Timezone
         - TIME_ZONE : UTC --> Asia/Seoul
+
+
+### 3.6.2 테이블 정의
+- polls 애플리케이션은 Question & Choice 두 개의 테이블 필요
+- polls/models.py

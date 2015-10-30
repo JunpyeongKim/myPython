@@ -356,3 +356,9 @@ __Procedure__
 
 
 ### 3.7.3 View 함수 detail() 및 폼 템플릿 작성
+- detail.html
+- polls.views.detail()
+
+
+### 3.7.4 View 함수 vote() 및 리다이렉션 작성
+- polls.views.vote()

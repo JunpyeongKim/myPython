@@ -1,9 +1,20 @@
-from django.shortcuts import render
+# encoding=utf-8
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from polls.models import Question, Choice
 
 # Create your views here.
+
+
+'''
+    Questions (Open --> /admin --> Quesitons)
+    Question text               Date            Time
+    -----------------------------------------------------
+    What is your hobby?         Today           Now
+    Who do you like the best ?  2014-08-01      Midnight
+    Where do you live?          2013-12-25      Noon
+'''
 
 
 def index(request):
@@ -23,6 +34,13 @@ def index(request):
             - 웹 프로그램 개발시 자주 사용되는 기능들을 미리 개발하여 내장 함수로 제공
     '''
     return render(request, 'polls/index.html', context)
+
+
+'''
+   Choices (Open --> /admin --> Quesitons)
+   What is your hobby?  Reading / Soccer / Climbing
+
+'''
 
 
 def detail(request, question_id):

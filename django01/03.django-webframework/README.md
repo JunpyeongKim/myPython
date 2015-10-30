@@ -343,7 +343,10 @@ __Procedure__
     - django.conf.urls.patterns()
     - django.conf.urls.url()
 - mysite/settings.py
-    - ROOT_URLCONF : Django 가 URL 분석시 이 곳에 정의된 urls.py 를 가장 먼저 분석
+    - ROOT_URLCONF = 'mysite.urls'
+        - Django 가 URL 분석시 이 곳에 정의된 urls.py 를 가장 먼저 분석
+- mysite/urls.py & polls/urls.py 2개의 파일에 작성하는 것을 추천
+    - (*) mysite/urls.py 에 모두 정의 가능하나 추천하지 않는다
 
 
 ### 3.7.2 View 함수 index() 및 템플릿 작성
@@ -370,3 +373,10 @@ __Procedure__
 - View 함수와 Template 태그 양쪽에서 모두 URL 스트링 추출 가능
     - Template --> {% url 'polls:detail' question.id %}
     - View 함수 --> reverse('polls:detail', args=(question.id,))
+
+
+### 3.7.6 지금까지 작업 확인하기 
+- Open /admin
+    - Questions 입력
+    - Choices 입력
+- Open /polls

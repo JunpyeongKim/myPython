@@ -30,6 +30,7 @@ def detail(request, question_id):
     #   - def get_object_or_404(klass, *args, **kwargs):
     #   - (*) get_list_or_404() : filter() 를 사용
     #       - get_object_or_404() : get() 을 사용
+    # Http404
     question = get_object_or_404(Question, pk=question_id)
 
     '''
@@ -43,6 +44,7 @@ def detail(request, question_id):
 
 
 def vote(request, question_id):
+    # Http404
     p = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = p.choice_set.get(pk=request.POST['choice'])
@@ -58,3 +60,8 @@ def vote(request, question_id):
         # reverse() : URLconf로부터 URL 패턴 --> URL 스트링을 구한다
         return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
 
+
+def results(request, question_id):
+    # Http404
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/results.html', {'question': question})

@@ -362,3 +362,11 @@ __Procedure__
 
 ### 3.7.4 View 함수 vote() 및 리다이렉션 작성
 - polls.views.vote()
+
+
+### 3.7.5 View 함수 results() 및 템플릿 작성
+- polls.views.results()
+- results.html
+- View 함수와 Template 태그 양쪽에서 모두 URL 스트링 추출 가능
+    - Template --> {% url 'polls:detail' question.id %}
+    - View 함수 --> reverse('polls:detail', args=(question.id,))

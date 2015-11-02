@@ -9,6 +9,7 @@ from polls.models import Question, Choice
 
 '''
     Questions (Open --> /admin --> Quesitons)
+    -----------------------------------------------------
     Question text               Date            Time
     -----------------------------------------------------
     What is your hobby?         Today           Now
@@ -18,7 +19,7 @@ from polls.models import Question, Choice
 
 
 def index(request):
-    # django.core.serializers.python.Serializer
+    # Question.objects.all() : returns a QuerySet that contains all Question objects in the database.
     latest_question_list = Question.objects.all().order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
 
@@ -38,7 +39,9 @@ def index(request):
 
 '''
    Choices (Open --> /admin --> Quesitons)
+   -----------------------------------------------------
    What is your hobby?  Reading / Soccer / Climbing
+   -----------------------------------------------------
 
 '''
 

@@ -13,7 +13,7 @@ from django.db import models
     question_text   |   varchar(200)    |   NotNull                       |   질문 문장
     pub_date        |   datetime        |   NotNull                       |   질문 생성 시각
 
-    CREATE TABLE Question (
+    CREATE TABLE polls_question (
         id INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
         question_text   VARCHAR(200)    NOT NULL,
         pub_date    DATETIME    NOT NULL
@@ -48,7 +48,7 @@ class Question(models.Model):
     votes           |   integer         |   NotNull                           |   투표 카운트
     question_id     |   integer         |   NotNull, FK(Question.id), Index   |   Foreign Key
 
-    CREATE TABLE Choice (
+    CREATE TABLE polls_choice (
         id INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
         choice_text   VARCHAR(200)    NOT NULL,
         votes   INTEGER NOT NULL,

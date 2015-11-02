@@ -28,7 +28,7 @@ from polls import views
 # def patterns(prefix, *args)
 # urlpatterns = patterns('',
 #                        # def url(regex, view, kwargs=None, name=None, prefix='')
-#                        #    - view <-- regex 에서 추출한 인자 & HttpRequest를 전달
+#                        #    - view <-- HttpRequest & regex 에서 추출한 인자가 전달된다
 #                        #    - kwargs : 추가 인자 전달
 #                        #    - name : template 파일에서 사용
 #

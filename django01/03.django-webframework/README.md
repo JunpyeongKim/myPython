@@ -110,7 +110,7 @@
     - View --> Template
     - Controller --> View
 - 처리 과정
-    - 클라이어트 요청 --> URL conf 모듈이 URL 분석 --> URL 처리를 담당하는 View의 로직이 수행
+    - 클라이어트 요청 --> URLconf 모듈이 URL 분석 --> URL 처리를 담당하는 View의 로직이 수행
         - --> DB 처리가 필요하면 Model을 통해서 처리
     - --> View의 로직 처리 결과를 Template 을 사용하여 HTML 생성 --> HTML을 클라이언트에게 전송
 
@@ -118,16 +118,15 @@
 ### 3.3.2 Model - 데이터베이스 설계
 - Model : 사용될 데이터에 대한 정의를 담고 있는 클래스
     - ORM(Object-Relational Mapping) 사용 <-- SQL 없이도 DB Access 가능
-        - (*) Database Engine(SQLite3, MySQL, PostgreSQL, ...)을 변경하더라도 ORM을 통한 API 변결 불필요. 
-    - (*) 직접 SQL을 사용해 Database의 데이터를 읽어올 수 있다.
+        - (*) Database Engine(SQLite3, MySQL, PostgreSQL, ...)을 변경하더라도 ORM을 통한 API 변경 불필요. 
+    - (*) 직접 SQL을 사용해 Database의 데이터를 읽어올 수도 있다.
 - Model 클래스 --> Table
 - Model 클래스의 Attribute --> Table's Column
 - models.py 에 정의
 
 
 ### 3.3.3 Template - 화면 UI 설계
-- 자체 Template 시스템을 가진다
-    - 문법을 제공한다.
+- 자체 Template 시스템을 가진다. --> 문법을 제공한다.
 - Template 에서 Python 코드를 직접 사용 가능
 - *.html 확장자를 가지며 적절한 디렉토리에 위치시켜야 한다.
     - TEMPLATE_DIRS 또는 INSTALLED_APPS 에 지정된 디렉토리를 지정된 순서대로 검색한다.
@@ -178,7 +177,7 @@ __settings.py__
 - Project : 전체 프로그램
 - Application : 프로젝트를 몇 개의 기능 그룹으로 나누었을 때 이 하위 서브 프로그램
     - Project 디렉토리와 Application 디렉토리를 구분하고 있다.
-        - Project & Application : Python Package Directory에 해당한다. <-- "__init.py__" 이 존재하는 디렉토리
+        - Project & Application Directory : Python Package Directory에 해당한다. <-- "__init.py__" 이 존재하는 디렉토리
     - 하나의 Application이 여러 개의 Project에 포함될 수 있다. <-- 재사용
     - Project를 모아서 더 큰 Project를 만들수 있다.
 
@@ -195,6 +194,7 @@ __settings.py__
 ### 3.4.2 애플리케이션 생성
 
 
+    $ cd ch3
     $ python manage.py startapp polls
     
 
@@ -247,8 +247,7 @@ __Administrator(Super User) 생성__
 __Directory 확인_
 
 
-    # Ubuntu Only
-    $ tree ch3
+    $ tree ch3      # Ubuntu Only
 
 
 ## 3.5 애플리케이션 개발하기 - 설계
@@ -267,13 +266,13 @@ __Procedure__
 
 
     # Database 지정
-    $ vi settings.py
+    $ vi mysite/settings.py
     
     # Table 정의 
-    $ vi models.py
+    $ vi polls/models.py
     
     # 정의된 Table을 Admin에서 보이도록 한다
-    $ vi admin.py
+    $ vi polls/admin.py
     
     # 변경 사항 추출 
     $ python manage.py makemigrations
@@ -328,7 +327,7 @@ __Procedure__
 ## 3.7 애플리케이션 개발하기 - View 및 Template 코딩
 - URL & View
     - 항상 1:1 관계로 매핑
-    - URL/View 매핑을 URLconf 라고 한다
+    - URL-View 매핑을 URLconf 라고 한다
     - urls.py
 - URLconf 설계
     - /polls/           : index()
@@ -339,7 +338,7 @@ __Procedure__
 
 
 ### 3.7.1 URLconf 코딩
-- polls/urls.py
+- mysite/urls.py (--> 효율성을 위해 polls/urls.py 로 이동 예정)
     - django.conf.urls.patterns()
     - django.conf.urls.url()
 - mysite/settings.py
@@ -353,6 +352,7 @@ __Procedure__
 - polls/templates/polls/index.html
     - TEMPLATE_DIRS, INSTALLED_APPS 의 디렉토리를 검색
     - 템플릿 파일 충돌 방지위해 templates/ 하위에 다시 애플리케이션명으로 디렉토리 생성한다 
+- polls.views.index()
 
 
     $ mkdir -p polls/templates/polls
@@ -370,6 +370,7 @@ __Procedure__
 ### 3.7.5 View 함수 results() 및 템플릿 작성
 - polls.views.results()
 - results.html
+    - pluralize : filter
 - View 함수와 Template 태그 양쪽에서 모두 URL 스트링 추출 가능
     - Template --> {% url 'polls:detail' question.id %}
     - View 함수 --> reverse('polls:detail', args=(question.id,))
@@ -380,3 +381,19 @@ __Procedure__
     - Questions 입력
     - Choices 입력
 - Open /polls
+
+
+## Conclusion
+
+
+    $ django-admin.py startproject [project-name]
+    $ cd [project-name]
+    $ python manage.py startapp [app-name]
+    $ python manage.py migrate
+    $ python manage.py runserver
+    
+    $ python manage.py createsuperuser
+    
+    $ python manage.py makemigrations
+    $ python manage.py migrate
+    $ python manage.py sqlmigrate [app-nam] 0001

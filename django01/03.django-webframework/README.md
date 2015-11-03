@@ -1,9 +1,10 @@
-# 3. Django 웹 프레임워크
+3. Django 웹 프레임워크
+====================
 - 파이썬 웹 프레임워크 중에서 가장 준비가 잘 되어 있는 프레임워크
 - (MVC 패턴에 해당하는) MTV 패턴에 따라 개발하도록 설계되어 있다.
 
 
-## 3.1 일반적인 특징
+# 3.1 일반적인 특징
 - (*) 현재 가장 많이 사용
     - (*) 2003년 : Lawrence Journal-World newspaper 웹 개발팀의 내부 프로젝트로 시작
     - (*) 2005년 : 오픈소스 프로젝트로 공개
@@ -31,14 +32,14 @@
     - *.py 파일의 변경 여부를 감시 
 
 
-## 3.2 Django 프로그램 설치
+# 3.2 Django 프로그램 설치
 - (*) 설치 과정은 운영체제 상관없이 동일
 - Document
     - https://docs.djangoproject.com/en/1.8/intro/install/
     - https://pip.pypa.io/en/latest/
         
 
-### 3.2.1 기존 Django 프로그램삭제
+## 3.2.1 기존 Django 프로그램삭제
 - (*) pip 프로그램으로 설치하는 경우 예전 버전의 장고를 자동으로 삭제해 준다.
 
 - Django 설치 디렉토리 찾기
@@ -55,7 +56,7 @@
     $ rm -rf Django*
 
 
-### 3.2.2 pip 프로그램  설치
+## 3.2.2 pip 프로그램  설치
 - (*) Python Install Program
     - 파이썬 오픈소스 저장소인 PyPI(Python Package Index)에 있는 패키지를 설치/관리
 
@@ -79,7 +80,7 @@
     --> /Library/Python/2.7/site-packages/django
 
 
-### 3.2.3 수동으로 설치
+## 3.2.3 수동으로 설치
 - Browser --> https://www.djangoproject.com/download/
 
 
@@ -88,24 +89,24 @@
     $ sudo python setup.py install
 
 
-### 3.2.4 윈도우에서 Django 설치
+## 3.2.4 윈도우에서 Django 설치
 - (*) Administrator 권한으로 설치 권장
 - 3.2.3 과 동일
 
 
-### 3.2.5 Django 프로그램 설치 확인
+## 3.2.5 Django 프로그램 설치 확인
 
     $ python
     >>> import django
     >>> print django.get_version()
 
 
-## 3.3 Django에서의 Application 개발 방식
+# 3.3 Django에서의 Application 개발 방식
 - 전체 프로그램 --> Project
 - 모듈화된 단위 프로그램 --> Application
 
 
-### 3.3.1 MTV 패턴
+## 3.3.1 MTV 패턴
 - MVC --> MTV
     - View --> Template
     - Controller --> View
@@ -115,7 +116,7 @@
     - --> View의 로직 처리 결과를 Template 을 사용하여 HTML 생성 --> HTML을 클라이언트에게 전송
 
 
-### 3.3.2 Model - 데이터베이스 설계
+## 3.3.2 Model - 데이터베이스 설계
 - Model : 사용될 데이터에 대한 정의를 담고 있는 클래스
     - ORM(Object-Relational Mapping) 사용 <-- SQL 없이도 DB Access 가능
         - (*) Database Engine(SQLite3, MySQL, PostgreSQL, ...)을 변경하더라도 ORM을 통한 API 변경 불필요. 
@@ -125,7 +126,7 @@
 - models.py 에 정의
 
 
-### 3.3.3 Template - 화면 UI 설계
+## 3.3.3 Template - 화면 UI 설계
 - 자체 Template 시스템을 가진다. --> 문법을 제공한다.
 - Template 에서 Python 코드를 직접 사용 가능
 - *.html 확장자를 가지며 적절한 디렉토리에 위치시켜야 한다.
@@ -159,20 +160,20 @@ __settings.py__
         /home/shkim/pyBook/ch03/pools/templates
 
 
-### 3.3.4 URLconf - URL 설계
+## 3.3.4 URLconf - URL 설계
 - 파이썬의 URL 지정 방식을 Elegant URL 이라고 부른다.
 - urls.py
     - URL & 처리 함수(View)를 매핑
 
 
-### 3.3.5 View - 로직 설계
+## 3.3.5 View - 로직 설계
 - 웹 요청을 받고 응답을 반환해 준다.
     - ex) 웹 요청 --> 데이터베이스 접속 등 해당 애플리케이션의 로직에 맞는 처리 
           --> 그 결과 데이터를 HTML로 변환하기 위해 Template 처리 후 --> 최종 HTML로 된 응답 데이터를 클라이언트로 반환 
 - 함수 또는 클래스의 메소드로 작성된다.
 - views.py
 
-## 3.4 프로젝트 뼈대 만들기
+# 3.4 프로젝트 뼈대 만들기
 - (*) 용어의 개념을 웹 서버 개발 측면에서 좀 더 구체화하여 사용하고 있다.
 - Project : 전체 프로그램
 - Application : 프로젝트를 몇 개의 기능 그룹으로 나누었을 때 이 하위 서브 프로그램
@@ -182,7 +183,7 @@ __settings.py__
     - Project를 모아서 더 큰 Project를 만들수 있다.
 
 
-### 3.4.1 프로젝트 생성
+## 3.4.1 프로젝트 생성
  
 
     $ django-admin.py startproject mysite
@@ -191,14 +192,14 @@ __settings.py__
     $ mv mysite ch3
 
 
-### 3.4.2 애플리케이션 생성
+## 3.4.2 애플리케이션 생성
 
 
     $ cd ch3
     $ python manage.py startapp polls
     
 
-### 3.4.3 데이터베이스 변경사항 반영
+## 3.4.3 데이터베이스 변경사항 반영
 - Default : SQLite3 Database Engine 사용
 - Django 는 모든 웹 프로젝트 개발시 반드시 사용자와 사용자 그룹 테이블이 필요하다고 가정하고 설계되었다. 
 
@@ -208,7 +209,7 @@ __settings.py__
         - db.sqlite3 생성
 
 
-### 3.4.4 지금까지 작업 확인하기
+## 3.4.4 지금까지 작업 확인하기
 - runserver : 간단한 테스트용 웹 서버
 
 
@@ -250,7 +251,7 @@ __Directory 확인_
     $ tree ch3      # Ubuntu Only
 
 
-## 3.5 애플리케이션 개발하기 - 설계
+# 3.5 애플리케이션 개발하기 - 설계
 - 화면 UI 설계
     - View & Template 코딩
     - index.html / detail.html / results.html
@@ -260,7 +261,7 @@ __Directory 확인_
 - (*) 독립적으로 개발 가능한 Model 을 먼저 코딩 
 
 
-## 3.6 애플리케이션 개발하기 - Model 코딩
+# 3.6 애플리케이션 개발하기 - Model 코딩
 
 __Procedure__
 
@@ -283,7 +284,7 @@ __Procedure__
     $ python manage.py runserver
 
 
-### 3.6.1 데이터베이스 지정
+## 3.6.1 데이터베이스 지정
 - settings.py 확인 
     - DATABASES
         - DATABASES.default.ENGINE : sqlite3
@@ -294,7 +295,7 @@ __Procedure__
         - TIME_ZONE : UTC --> Asia/Seoul
 
 
-### 3.6.2 테이블 정의
+## 3.6.2 테이블 정의
 - polls 애플리케이션은 Question & Choice 두 개의 테이블 필요
 - polls/models.py
     - django.db.models
@@ -305,12 +306,12 @@ __Procedure__
         - ForeignKey
 
 
-### 3.6.3 Admin 사이트에 테이블 반영
+## 3.6.3 Admin 사이트에 테이블 반영
 - polls/admin.py
     - admin.site.register()
 
 
-### 3.6.4 데이터베이스 변경사항 반영
+## 3.6.4 데이터베이스 변경사항 반영
 
 
     $ python manage.py makemigrations
@@ -320,11 +321,11 @@ __Procedure__
     $ python manage.py sqlmigrate polls 0001
 
 
-### 3.6.5 지금까지 작업 확인하기
+## 3.6.5 지금까지 작업 확인하기
 - Open http://your.com.ip.address/admin
 
 
-## 3.7 애플리케이션 개발하기 - View 및 Template 코딩
+# 3.7 애플리케이션 개발하기 - View 및 Template 코딩
 - URL & View
     - 항상 1:1 관계로 매핑
     - URL-View 매핑을 URLconf 라고 한다
@@ -337,7 +338,7 @@ __Procedure__
     - /admin/           : Django
 
 
-### 3.7.1 URLconf 코딩
+## 3.7.1 URLconf 코딩
 - mysite/urls.py (--> 효율성을 위해 polls/urls.py 로 이동 예정)
     - django.conf.urls.patterns()
     - django.conf.urls.url()
@@ -348,7 +349,7 @@ __Procedure__
     - (*) mysite/urls.py 에 모두 정의 가능하나 추천하지 않는다
 
 
-### 3.7.2 View 함수 index() 및 템플릿 작성
+## 3.7.2 View 함수 index() 및 템플릿 작성
 - polls/templates/polls/index.html
     - TEMPLATE_DIRS, INSTALLED_APPS 의 디렉토리를 검색
     - 템플릿 파일 충돌 방지위해 templates/ 하위에 다시 애플리케이션명으로 디렉토리 생성한다 
@@ -358,16 +359,16 @@ __Procedure__
     $ mkdir -p polls/templates/polls
 
 
-### 3.7.3 View 함수 detail() 및 폼 템플릿 작성
+## 3.7.3 View 함수 detail() 및 폼 템플릿 작성
 - detail.html
 - polls.views.detail()
 
 
-### 3.7.4 View 함수 vote() 및 리다이렉션 작성
+## 3.7.4 View 함수 vote() 및 리다이렉션 작성
 - polls.views.vote()
 
 
-### 3.7.5 View 함수 results() 및 템플릿 작성
+## 3.7.5 View 함수 results() 및 템플릿 작성
 - polls.views.results()
 - results.html
     - pluralize : filter
@@ -376,14 +377,14 @@ __Procedure__
     - View 함수 --> reverse('polls:detail', args=(question.id,))
 
 
-### 3.7.6 지금까지 작업 확인하기 
+## 3.7.6 지금까지 작업 확인하기 
 - Open /admin
     - Questions 입력
     - Choices 입력
 - Open /polls
 
 
-## Conclusion
+# Conclusion
 
 
     $ django-admin.py startproject [project-name]

@@ -1,6 +1,7 @@
-# 6. 웹 서버(Apache) 연동
+6. 웹 서버(Apache) 연동
+=====================
 
-## 6.1 mode_wsgi 확장 모듈
+# 6.1 mode_wsgi 확장 모듈
 - Apache 웹 서버의 프로그램 명 --> httpd
 - Apache는 추가로 필요한 기능을 모듈로 만들어 동적 로딩 방식으로 기능을 확장 가능
     - mod_alias : 클라이언트 요청 URL --> 서버 내 디렉토리로 매핑
@@ -33,7 +34,7 @@
     - ==> Django에서는 안정성을 고려하여 Daemon Mode로 실행할 것을 권장
 
 
-## 6.2 Django의 웹 서버 연동 원리
+# 6.2 Django의 웹 서버 연동 원리
 - mysite/wsgi.py
     - (*) Django & Web Server 를 연결하기 위한 파일
     - WSGI 규격에 따라 호출 가능한(callable) 애플리케이션 객체를 정의 --> 객체명은 반드시 application 이어야 한다
@@ -54,7 +55,7 @@
         - (*) ll /var/www/html
 
 
-## 6.3 상용 서버 적용 전 Django 의 설정 변경
+# 6.3 상용 서버 적용 전 Django 의 설정 변경
 - mysite.settings.DEBUG = False 이면 반드시 ALLOWED_HOSTS 를 설정해야 한다
     - CSRF(Cross Site Request Forgery) 공격을 방지하기 위해
 - Apache 같은 웹서버가 정적 파일의 위치를 알수 있도록  해주어야 한다
@@ -74,9 +75,9 @@
 - (*) https://docs.djangoproject.com/en/1.8/howto/deployment/checklist
     
 
-## 6.4 Embedded Mode 로 실행
+# 6.4 Embedded Mode 로 실행
 
-### 6.4.1 아파치 설정 
+## 6.4.1 아파치 설정 
 - httpd.con 에 mod_wsgi 관련 설정 추가 필요
 - 설정 및 실행은 root 권한으로
 
@@ -95,7 +96,7 @@
 - <Directocy /home/shkim/pyBook/ch6/www_static>
     - 아파치가 액세스 가능하도록 접근 권한 설정
 
-### 6.4.2 지금까지 작업 확인
+## 6.4.2 지금까지 작업 확인
 - runserver 로는 정상동작하나, Apache 로 서비스가 안되는 경우
     - SE(Security Enhancec)Linux 보안 정책 변경 필요
         - $ setenforce permissive
@@ -108,9 +109,9 @@
     - $ tail access_log
 
 
-## 6.5 Daemon Mode 로 실행
+# 6.5 Daemon Mode 로 실행
 
-### 6.5.1 아파치 설정 
+## 6.5.1 아파치 설정 
 
     $ cd /etc/httpd/conf
     $ vi httpd.conf

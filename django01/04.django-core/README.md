@@ -5,6 +5,7 @@
 - 데이터베이스에 들어있는 데이터를 쉽게 관리가능한 기능을 제공
     - 데이터 생성 / 조회 / 변경 / 삭제 등
     - http://localhost:8000/admin
+- https://docs.djangoproject.com/en/1.8/ref/contrib/admin/
 
 
 ## 4.1.1 데이터 입력 및 수정

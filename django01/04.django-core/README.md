@@ -46,3 +46,45 @@
 
 ## 4.1.7 테이블 형식으로 보여주기
 - class ChoiceInline(admin.TabularInline):
+
+
+## 4.1.8 레코드 리스트 항목 지정하기
+- models.py
+    - __unicode__() 함수의 리턴값을 레코드의 제목으로 사용
+- 컬럼 항목 추가
+    - polls/admin.py
+        - list_display = ('question_text', 'pub_date')
+        - 컬럼 헤더를 클릭하면 컬럼을 기준으로 정렬된다
+
+
+## 4.1.9 list_filter 필터
+- UI 화면에 필터 사이드바를 붙일 수 있다
+- polls/admin.py
+    - [Filter] : 기준 필드 타입에 따라 Django 가 자동으로 적절한 항목들을 보여준다
+    - ex) list_filter = ['pub_date']
+        - Any date, Today, ...
+
+
+## 4.1.10 search_fields
+- UI화면에 검색 박스 표시
+- polls/admin.py
+    - LIKE 쿼리로 검색
+    - 여러 개의 필드 저징 가능
+    - ex) search_fields = ['question_text']
+
+## 4.1.11 polls/admin.py 변경 내역 정리
+- N/A
+
+
+## 4.1.12 Admin 사이트 템플릿 수정
+- Django 의 기본 Admin 템플릿 파일을 우리 프로젝트로 복사후 변경 --> settings.py 에 새로 만든 프로젝트 템플릿 디렉토리를 등록
+
+
+    $ cd ch4/
+    $ mkdir -p templates/admin
+    $ cp -v /Library/Python/2.7/site-packages/django/contrib/admin/templates/admin/base_site.html templates/admin/
+
+- base_site.html
+    - {{ site_header|default:_('Django administration') }} --> My Administration
+- mysite/settings.py
+    - TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates']

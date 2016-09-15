@@ -58,3 +58,5 @@ target/
 
 # WebStorm
 .idea/
+django01/03.django-webframework/ch3/db.sqlite3
+django01/03.django-webframework/ch3/polls/migrations/0001_initial.py

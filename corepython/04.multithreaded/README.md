@@ -1,0 +1,29 @@
+# Chapter 4 Multithreaded Programming
+- http://cpp.wesc.webfactional.com/cpp3ev2/book3v2/ch04/
+
+Example	Filename
+4-1	onethr.py
+4-2	mtsleepA.py
+4-3	mtsleepB.py
+4-4	mtsleepC.py
+4-5	mtsleepD.py
+4-6	mtsleepE.py
+4-7	myThread.py
+4-8	mtfacfib.py
+4-9	bookrank.py
+4-10	mtsleepF.py
+4-11	candy.py
+4-12	prodcons.py
+4-13	bookrank3CF.py
+extra	bookrank3.py
+extra	candy3.py
+extra	mtfacfib3.py
+extra	mtsleepA3.py
+extra	mtsleepB3.py
+extra	mtsleepC3.py
+extra	mtsleepD3.py
+extra	mtsleepE3.py
+extra	mtsleepF3.py
+extra	myThread3.py
+extra	onethr3.py
+extra	prodcons3.py
